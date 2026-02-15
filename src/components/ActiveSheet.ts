@@ -1,10 +1,11 @@
 import type { Character } from '../types';
 // import '../styles/sheet.scss'; // Removing redundant import that might be causing build issues
-import { getAbilityModifier, calculateAttack, getMaxHp, applyRest, getConditionPenalty } from '../utils/rulesEngine';
+import { getAbilityModifier, calculateAttack, getMaxHp, applyRest, getConditionPenalty, getSkillBonus } from '../utils/rulesEngine';
 import { DiceRoller } from '../utils/DiceRoller';
 import { saveCharacter } from '../auth/firebase';
 import { Toast } from './Toast';
-import { SKILLS, WEAPONS, ARMOR, EQUIPMENT } from '../data/rules';
+import { SKILLS, WEAPONS, ARMOR, EQUIPMENT, FEATS } from '../data/rules';
+import { TALENTS } from '../data/talents';
 import { Modal } from './Modal';
 import { type User } from 'firebase/auth';
 
@@ -183,12 +184,28 @@ export class ActiveSheet {
                             <div class="log-entry system">Session started.</div>
                         </div>
                     </div>
-                     <div class="card features-card">
+                    <div class="card features-card">
                         <h3>Feats & Talents</h3>
-                        <ul class="simple-list">
-                             ${c.feats.map(f => `<li>${f}</li>`).join('')}
-                             ${c.talents.map(t => `<li>${t}</li>`).join('')}
-                        </ul>
+                        <div class="features-list">
+                             ${c.feats.map(f => {
+            const featData = FEATS.find(data => data.name === f);
+            return `
+                                    <div class="feature-item" style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #eee;">
+                                        <div style="font-weight: bold;">${f}</div>
+                                        <div style="font-size: 0.85em; color: #555;">${featData?.description || 'No description available.'}</div>
+                                    </div>
+                                 `;
+        }).join('')}
+                             ${c.talents.map(t => {
+            const talentData = TALENTS.find(data => data.name === t);
+            return `
+                                    <div class="feature-item" style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #eee;">
+                                        <div style="font-weight: bold;">${t} <span style="font-weight: normal; font-size: 0.8em; color: #777;">(Talent)</span></div>
+                                        <div style="font-size: 0.85em; color: #555;">${talentData?.description || 'No description available.'}</div>
+                                    </div>
+                                 `;
+        }).join('')}
+                        </div>
                     </div>
                 </section>
             </div>
@@ -258,7 +275,7 @@ export class ActiveSheet {
                 <div class="attack-row">
                     <div class="attack-info">
                         <span class="attack-name">${w.name}</span>
-                        <span class="attack-bonus" style="color: ${condPenalty < 0 ? '#d32f2f' : '#2ecc71'}">+${attackBonus}</span>
+                        <span class="attack-bonus" style="color: ${condPenalty < 0 ? '#d32f2f' : '#2ecc71'}">${attackBonus >= 0 ? '+' : ''}${attackBonus}</span>
                         <span class="attack-damage" style="font-size: 0.8em; color: #666; margin-left: 8px;">(${damage})</span>
                     </div>
                     <div style="display: flex; gap: 5px;">
@@ -279,19 +296,15 @@ export class ActiveSheet {
         return SKILLS.map(skillData => {
             const s = skillData.name;
             const abilKey = skillData.ability as keyof typeof this.character.abilities;
-            const abilVal = this.character.abilities[abilKey];
-            const mod = getAbilityModifier(abilVal);
             const isTrained = trained.includes(s);
-            const halfLevel = Math.floor(this.character.level / 2);
-            // Condition applies to ALL skills in Saga Edition
-            const total = halfLevel + mod + (isTrained ? 5 : 0) + condPenalty;
+            const total = getSkillBonus(this.character, s) + condPenalty;
 
             const abbr = abbrMap[abilKey] || abilKey.toUpperCase().substring(0, 3);
 
             return `
                 <button class="skill-btn ${isTrained ? 'trained' : ''}" data-skill="${s}" data-bonus="${total}" data-cond-penalty="${condPenalty}">
                     <span class="skill-name">${s} <span style="font-size: 0.8em; opacity: 0.7;">(${abbr})</span></span>
-                    <span class="skill-mod" style="color: ${condPenalty < 0 ? '#d32f2f' : 'inherit'}">+${total}</span>
+                    <span class="skill-mod" style="color: ${condPenalty < 0 ? '#d32f2f' : 'inherit'}">${total >= 0 ? '+' : ''}${total}</span>
                 </button>
             `;
         }).join('');

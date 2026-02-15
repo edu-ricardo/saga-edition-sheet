@@ -1,5 +1,6 @@
 import type { Character, Talent } from '../../types';
 import { TALENTS } from '../../data/rules';
+import { getAvailableTalents } from '../../utils/rulesEngine';
 
 export function TalentsStep(character: Character, onNext: () => void, onBack: () => void): HTMLElement {
     const container = document.createElement('div');
@@ -25,9 +26,7 @@ export function TalentsStep(character: Character, onNext: () => void, onBack: ()
     });
 
     // Determine number of talents to select
-    // For Level 1: 1 Talent.
-    // For now, hardcode 1 for Level 1 creation.
-    const slots = 1;
+    const slots = getAvailableTalents(character);
 
     // Use a Set for selected talents to handle easy add/remove
     const selectedTalents = new Set<string>(character.talents || []);

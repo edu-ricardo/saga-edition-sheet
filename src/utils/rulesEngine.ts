@@ -1,5 +1,5 @@
 import type { Character } from '../types';
-import { SPECIES, CLASSES } from '../data/rules';
+import { SPECIES, CLASSES, SKILLS } from '../data/rules';
 
 export function getAbilityModifier(score: number): number {
     return Math.floor((score - 10) / 2);
@@ -15,34 +15,7 @@ export function calculateDerivedStats(character: Character): void {
     character.level = level;
 
     // 1. HP Calculation
-    // Logic: First class (level 1) gets Max HP + Con.
-    // Subsequent levels get (Average HP or Roll) + Con. 
-    // Average HP for d6=3.5 (4), d8=4.5 (5), d10=5.5 (6), d12=6.5 (7).
-    // Let's use fixed average for simplicity: Floor(Die/2) + 1. (e.g. d10 -> 6).
-
-    let totalHp = 0;
-    const conMod = getAbilityModifier(abilities.con);
-
-    classes.forEach((clsLevel, index) => {
-        const classData = CLASSES[clsLevel.className];
-        if (!classData) return;
-
-        if (index === 0) {
-            // Level 1 logic
-            totalHp += classData.startHp + conMod;
-            // Add remaining levels of first class if user set level > 1 in the tuple
-            if (clsLevel.level > 1) {
-                const perLevel = Math.floor(classData.hpPerLevel / 2) + 1;
-                totalHp += (perLevel + conMod) * (clsLevel.level - 1);
-            }
-        } else {
-            // Multiclass levels
-            const perLevel = Math.floor(classData.hpPerLevel / 2) + 1;
-            totalHp += (perLevel + conMod) * clsLevel.level;
-        }
-    });
-
-    character.hp = totalHp;
+    character.hp = getMaxHp(character);
 
     // 2. Defenses
     // Reflex = 10 + Level + Dex Mod + Class Bonus (Max) + Size Mod
@@ -50,7 +23,7 @@ export function calculateDerivedStats(character: Character): void {
     // Will = 10 + Level + Wis Mod + Class Bonus (Max)
 
     const dexMod = getAbilityModifier(abilities.dex);
-    // Con mod defined above
+    const conMod = getAbilityModifier(abilities.con);
     const wisMod = getAbilityModifier(abilities.wis);
 
     let maxRef = 0;
@@ -66,10 +39,33 @@ export function calculateDerivedStats(character: Character): void {
         }
     });
 
+    // Feat / Talent Bonuses
+    let featRef = 0;
+    let featFort = 0;
+    let featWill = 0;
+
+    // "Improved Defenses" or similar feats
+    if (character.feats.includes('Improved Defenses')) {
+        featRef += 1;
+        featFort += 1;
+        featWill += 1;
+    }
+
+    // "Force Boon" logic could go here if it affected retrieval, but usually it's just max points.
+    // Force Points: 5 + floor(Level / 2). "Force Boon" adds 3.
+    let baseFp = 5 + Math.floor(level / 2);
+    if (character.feats.includes('Force Boon')) {
+        baseFp += 3;
+    }
+    // Note: We don't overwrite current FP unless it's a reset/init scenario, 
+    // but the character object structure has `forcePoints` as current value.
+    // We might want to store `maxForcePoints` or handle this in a reset function.
+    // For now, let's leave FP management manual or to the level-up logic.
+
     character.defenses = {
-        reflex: 10 + level + dexMod + maxRef,
-        fortitude: 10 + level + conMod + maxFort,
-        will: 10 + level + wisMod + maxWill
+        reflex: 10 + level + dexMod + maxRef + featRef,
+        fortitude: 10 + level + conMod + maxFort + featFort,
+        will: 10 + level + wisMod + maxWill + featWill
     };
 
     // Size check
@@ -114,51 +110,66 @@ export function calculateAttack(character: Character, weaponType: 'Melee' | 'Ran
     return bab + mod + sizeMod + featBonus;
 }
 
+export function getSkillBonus(character: Character, skillName: string): number {
+    const trained = character.skills.includes(skillName);
+    const skillData = SKILLS.find(s => s.name === skillName);
+    if (!skillData) return 0;
+
+    const ability = character.abilities[skillData.ability];
+    const mod = getAbilityModifier(ability);
+    const halfLevel = Math.floor(character.level / 2);
+
+    // Skill Focus Feat
+    const hasFocus = character.feats.includes(`Skill Focus (${skillName})`) || character.feats.includes('Skill Focus');
+    // Note: The feat string might be "Skill Focus (Pilot)". If they selected generalized "Skill Focus", UI needs to handle specific.
+    // For now, let's assume specific string match or partial if we store "Skill Focus (Pilot)"
+
+    // We need to check if ANY of the feats matches "Skill Focus (<this skill>)"
+    // Or if the specific string "Skill Focus (<skillName>)" is in the list.
+    const skillFocusBonus = character.feats.some(f => f === `Skill Focus (${skillName})`) ? 5 : 0;
+
+    return halfLevel + mod + (trained ? 5 : 0) + skillFocusBonus;
+}
+
 export function applyRest(character: Character): void {
     // 8-hour rest logic
     // 1. Recover HP = Level
     character.hp = Math.min(character.hp + character.level, getMaxHp(character));
-
-    // 2. Reset Force Points (if Force Boon or similar, usually logic is complex, for now reset to max for level? No, they don't reset daily in Saga, they reset per level up. 
-    // Wait, Saga Edition Force Points replenish at end of encounter if spent? No.
-    // "Force Points are replenished when the character gains a new level." 
-    // Actually, "Daily" abilities reset. 
-    // Let's stick to HP and maybe condition track.
-
-    // 3. Condition Track
-    // "Natural Healing: 8 hours rest moves +1 step up condition track"
-    // We don't store track index in Character yet explicitly, but let's assume UI handles it or we add it.
-
-    // Correction: Force points do NOT reset on rest. Destiny points do NOT reset.
-    // Ability damage heals? Yes, 1 point per day.
 }
 
 export function getMaxHp(character: Character): number {
-    // Re-calculate max HP based on current data
-    // This replicates logic in calculateDerivedStats but returns value
-    // Optimized: assume calculated derivedstats set character.hp to max initially? 
-    // No, character.hp is current HP. We need a maxHp field or recalc.
-    // implementation simplification: we will store maxHp in Character type or recalc it.
-    // For now, let's recalc.
     let totalHp = 0;
     const conMod = getAbilityModifier(character.abilities.con);
+
+    // Toughness Feat: +1 HP per level
+    const hasToughness = character.feats.includes('Toughness');
+    const toughnessBonus = hasToughness ? character.level : 0;
 
     character.classes.forEach((clsLevel, index) => {
         const classData = CLASSES[clsLevel.className];
         if (!classData) return;
 
         if (index === 0) {
+            // Level 1 logic: Max Hit Die + Con
             totalHp += classData.startHp + conMod;
+
+            // Remaining levels of first class
             if (clsLevel.level > 1) {
                 const perLevel = Math.floor(classData.hpPerLevel / 2) + 1;
-                totalHp += (perLevel + conMod) * (clsLevel.level - 1);
+                // Saga Rule: Minimum 1 HP per level gain
+                const gained = Math.max(1, perLevel + conMod);
+                totalHp += gained * (clsLevel.level - 1);
             }
         } else {
+            // Multiclass / Prestige levels
             const perLevel = Math.floor(classData.hpPerLevel / 2) + 1;
-            totalHp += (perLevel + conMod) * clsLevel.level;
+            // Saga Rule: Minimum 1 HP per level gain
+            const gained = Math.max(1, perLevel + conMod);
+            totalHp += gained * clsLevel.level;
         }
     });
-    return totalHp;
+
+    return totalHp + toughnessBonus;
 }
 
 export function getConditionPenalty(condition: number | undefined): number {
@@ -167,7 +178,129 @@ export function getConditionPenalty(condition: number | undefined): number {
         case 2: return -2;
         case 3: return -5;
         case 4: return -10;
-        case 5: return -10; // Helpless, usually no actions, but for rolls -10 is a safe fallback
+        case 5: return -10;
         default: return 0;
     }
+}
+
+export function getBabProgression(className: string): number {
+    const cls = CLASSES[className];
+    return cls?.babProgression || 0.75;
+}
+
+export function calculateBab(character: Character): number {
+    let totalBab = 0;
+    character.classes.forEach(cls => {
+        const progression = getBabProgression(cls.className);
+        totalBab += Math.floor(cls.level * progression);
+    });
+    return totalBab;
+}
+
+export interface PrereqCheckResult {
+    eligible: boolean;
+    reasons: string[];
+}
+
+export function checkPrerequisites(character: Character, targetClass: any): PrereqCheckResult {
+    const reasons: string[] = [];
+    if (!targetClass.prerequisites) return { eligible: true, reasons: [] };
+
+    const p = targetClass.prerequisites;
+    const totalLevel = character.classes.reduce((sum, c) => sum + c.level, 0);
+
+    // 1. Level Check
+    if (p.level && totalLevel < p.level) {
+        reasons.push(`Minimum Level ${p.level}`);
+    }
+
+    // 2. BAB Check
+    if (p.bab) {
+        const currentToalBab = calculateBab(character);
+        if (currentToalBab < p.bab) {
+            reasons.push(`Base Attack Bonus +${p.bab} (Current: +${currentToalBab})`);
+        }
+    }
+
+    // 3. Feats Check
+    if (p.feats) {
+        const missingFeats = p.feats.filter((reqFeat: string) => !character.feats.includes(reqFeat));
+        if (missingFeats.length > 0) {
+            reasons.push(`Feats: ${missingFeats.join(', ')}`);
+        }
+    }
+
+    // 4. Skills Check (Trained Skills)
+    if (p.skills) {
+        const missingSkills = p.skills.filter((reqSkill: string) => !character.skills.includes(reqSkill));
+        if (missingSkills.length > 0) {
+            reasons.push(`Trained Skills: ${missingSkills.join(', ')}`);
+        }
+    }
+
+    // 5. Talents Check
+    if (p.talents) {
+        const missingTalents = p.talents.filter((reqTalent: string) => !character.talents.includes(reqTalent));
+        if (missingTalents.length > 0) {
+            reasons.push(`Talents: ${missingTalents.join(', ')}`);
+        }
+    }
+
+    // 6. Dark Side Check
+    if (p.darkSide === true) {
+        if (character.darkSideScore <= 0) {
+            reasons.push(`Must have Dark Side Score > 0`);
+        }
+    }
+
+    // 7. Classes Check (e.g. Jedi Knight for Jedi Master)
+    if (p.classes) {
+        const missingClasses = p.classes.filter((reqClass: string) => !character.classes.some(c => c.className === reqClass));
+        if (missingClasses.length > 0) {
+            reasons.push(`Class levels: ${missingClasses.join(', ')}`);
+        }
+    }
+
+    return {
+        eligible: reasons.length === 0,
+        reasons
+    };
+}
+
+export function getAvailableTalents(character: Character): number {
+    let total = 0;
+    character.classes.forEach(cls => {
+        // Standard: 1st and every odd level (1, 3, 5...) => ceil(level / 2)
+        // Exceptions could be handled here if needed
+        total += Math.ceil(cls.level / 2);
+    });
+    return total;
+}
+
+export function getAvailableFeats(character: Character): number {
+    // 1. General Character Feats (1, 3, 6, 9, 12, 15, 18...)
+    // Level 1 + floor(level / 3)
+    let general = 1 + Math.floor(character.level / 3);
+
+    // Human Bonus
+    if (character.species === 'Human') general += 1;
+
+    // 2. Class Bonus Feats
+    // Base Classes (Heroic): Jedi, Noble, Scoundrel, Scout, Soldier get feats at even levels (2, 4, 6...)
+    // Prestige Classes: Generally do NOT get standard bonus feats (they get special abilities or talents)
+    const baseClasses = ['Jedi', 'Noble', 'Scoundrel', 'Scout', 'Soldier'];
+    let classBonus = 0;
+
+    character.classes.forEach(cls => {
+        if (baseClasses.includes(cls.className)) {
+            classBonus += Math.floor(cls.level / 2);
+        }
+    });
+
+    return general + classBonus;
+}
+
+export function getMaxAbilityBoosts(character: Character): number {
+    // +1 to two stats at levels 4, 8, 12, 16, 20
+    return Math.floor(character.level / 4);
 }

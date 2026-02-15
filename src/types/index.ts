@@ -17,6 +17,7 @@ export interface Character {
   darkSideScore: number;
   condition: number; // 0=Normal, 1=-1, 2=-2, 3=-5, 4=-10, 5=Helpless
   userId: string;
+  abilityBoosts?: Record<number, (keyof AbilityScores)[]>; // Level -> ['str', 'dex']
 }
 
 export interface ClassLevel {
@@ -68,6 +69,7 @@ export interface Class {
     darkSide?: boolean;
     classes?: string[];
   };
+  babProgression: number;
 }
 
 export interface Skill {

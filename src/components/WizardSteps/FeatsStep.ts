@@ -1,22 +1,19 @@
 import type { Character } from '../../types';
 import { FEATS, CLASSES } from '../../data/rules';
+import { getAvailableFeats } from '../../utils/rulesEngine';
 
 export function FeatsStep(character: Character, onNext: () => void, onBack: () => void): HTMLElement {
     const container = document.createElement('div');
     container.className = 'wizard-step fade-in';
 
-    // Calculate selectable feats
-    // Level 1 Character gets 1 General Feat.
-    // Humans get +1 Bonus Feat.
-    // Some classes give bonus feats? (Jedi, Soldier etc get Starting Feats, but those are automatic).
-    // Condition: Starship Tactics (requires Pilot trained), etc.
-
-    let availableFeatSlots = 1; // General Feat at level 1
-    if (character.species === 'Human') availableFeatSlots += 1;
+    const availableFeatSlots = getAvailableFeats(character);
 
     // Filter feats: Don't show already possessed feats (from Class Starting Feats)
     let startingFeats: string[] = [];
     if (character.classes.length > 0) {
+        // Collect starting feats from ALL classes? Usually only 1st class gives starting feats.
+        // Multiclassing rules: "You do not gain the starting feats of the new class..."
+        // So only the first class in the array matters for "Starting Feats".
         const cls = CLASSES[character.classes[0].className];
         if (cls && cls.startFeats) {
             startingFeats = cls.startFeats;

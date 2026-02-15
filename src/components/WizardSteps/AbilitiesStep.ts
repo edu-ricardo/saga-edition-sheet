@@ -1,5 +1,5 @@
 import type { Character, AbilityScores } from '../../types';
-import { getAbilityModifier } from '../../utils/rulesEngine';
+import { getAbilityModifier, getMaxAbilityBoosts } from '../../utils/rulesEngine';
 import { SPECIES } from '../../data/rules';
 import { Toast } from '../Toast'; // Assuming Toast is available
 // import { Modal } from '../Modal'; // Unused in this file for now
@@ -30,6 +30,9 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
     const species = SPECIES[character.species];
     const mods = species ? species.abilityMods : {};
 
+    // Init ability boosts if needed
+    if (!character.abilityBoosts) character.abilityBoosts = {};
+
     // Helper: Roll 4d6 drop lowest
     const rollDie = (): number => {
         let val = Math.floor(Math.random() * 6) + 1;
@@ -41,6 +44,17 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
         const rolls = Array.from({ length: 4 }, rollDie);
         rolls.sort((a, b) => a - b);
         return rolls.slice(1).reduce((a, b) => a + b, 0);
+    };
+
+    // Helper: Get total level boosts for a stat
+    const getLevelBoost = (stat: keyof AbilityScores): number => {
+        let boost = 0;
+        if (character.abilityBoosts) {
+            Object.values(character.abilityBoosts).forEach(boosts => {
+                if (boosts.includes(stat)) boost += 1;
+            });
+        }
+        return boost;
     };
 
     // Initialize logic
@@ -66,6 +80,8 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
             </div>
 
             <div id="method-content"></div>
+            
+            <div id="level-boosts-content" style="margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1rem;"></div>
 
             <div class="actions">
                 <button id="prev-btn">Back</button>
@@ -74,6 +90,7 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
         `;
 
         const content = container.querySelector('#method-content') as HTMLElement;
+        const boostsContent = container.querySelector('#level-boosts-content') as HTMLElement;
         const methodSelect = container.querySelector('#gen-method') as HTMLSelectElement;
 
         methodSelect.addEventListener('change', (e) => {
@@ -89,6 +106,9 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
         else if (method === 'standard-array') renderAssignment(content, 'Standard Array');
         else if (method === 'rolling') renderRolling(content);
 
+        // Render Level Boosts
+        renderLevelBoosts(boostsContent);
+
         container.querySelector('#next-step-btn')?.addEventListener('click', () => {
             if (method === 'rolling' || method === 'standard-array') {
                 const unassigned = ABILITIES.some(stat => assignedRolls[stat] === null);
@@ -97,17 +117,90 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
                     return;
                 }
                 ABILITIES.forEach(stat => {
-                    character.abilities[stat] = (assignedRolls[stat] || 10) + (mods[stat] || 0);
+                    character.abilities[stat] = (assignedRolls[stat] || 10) + (mods[stat] || 0) + getLevelBoost(stat);
                 });
             } else {
                 ABILITIES.forEach(stat => {
-                    character.abilities[stat] = baseScores[stat] + (mods[stat] || 0);
+                    character.abilities[stat] = baseScores[stat] + (mods[stat] || 0) + getLevelBoost(stat);
                 });
             }
             onNext();
         });
 
         container.querySelector('#prev-btn')?.addEventListener('click', onBack);
+    };
+
+    const renderLevelBoosts = (parent: HTMLElement) => {
+        const maxBoosts = getMaxAbilityBoosts(character);
+        if (maxBoosts <= 0) return;
+
+        parent.innerHTML = `
+            <h4>Level Up Bonuses</h4>
+            <p>You have reached levels that grant Ability Score Increases (Levels 4, 8, 12, 16, 20).
+            At each milestone, choose two <strong>different</strong> ability scores to increase by 1.</p>
+            <div id="boosts-container" style="display: flex; flex-direction: column; gap: 0.5rem;"></div>
+        `;
+
+        const containerDiv = parent.querySelector('#boosts-container') as HTMLElement;
+
+        for (let i = 1; i <= maxBoosts; i++) {
+            const level = i * 4;
+            const boosts = character.abilityBoosts?.[level] || [];
+            const stat1 = boosts[0] || '';
+            const stat2 = boosts[1] || '';
+
+            const row = document.createElement('div');
+            row.className = 'card';
+            row.style.padding = '0.5rem';
+            row.style.display = 'flex';
+            row.style.alignItems = 'center';
+            row.style.gap = '1rem';
+
+            row.innerHTML = `
+                <strong style="width: 80px;">Level ${level}:</strong>
+                <select class="boost-select" data-level="${level}" data-index="0">
+                    <option value="">- Select -</option>
+                    ${ABILITIES.map(a => `<option value="${a}" ${stat1 === a ? 'selected' : ''}>${a.toUpperCase()}</option>`).join('')}
+                </select>
+                <span>&</span>
+                <select class="boost-select" data-level="${level}" data-index="1">
+                     <option value="">- Select -</option>
+                    ${ABILITIES.map(a => `<option value="${a}" ${stat2 === a ? 'selected' : ''}>${a.toUpperCase()}</option>`).join('')}
+                </select>
+            `;
+
+            containerDiv.appendChild(row);
+        }
+
+        parent.querySelectorAll('.boost-select').forEach(select => {
+            select.addEventListener('change', (e) => {
+                const target = e.target as HTMLSelectElement;
+                const level = parseInt(target.dataset.level || '0');
+                const index = parseInt(target.dataset.index || '0');
+                const val = target.value as keyof AbilityScores | '';
+
+                if (!character.abilityBoosts) character.abilityBoosts = {};
+                if (!character.abilityBoosts[level]) character.abilityBoosts[level] = [];
+
+                const current = [...(character.abilityBoosts[level] || [])];
+
+                // Ensure array has 2 slots
+                if (current.length < 2) current.length = 2;
+
+                current[index] = val as any;
+
+                // Validation: Cannot pick same stat twice in same level
+                const otherIndex = index === 0 ? 1 : 0;
+                if (val && current[otherIndex] === val) {
+                    Toast.show("You must select two different abilities.", 'error');
+                    target.value = ''; // Reset
+                    current[index] = undefined as any;
+                }
+
+                character.abilityBoosts[level] = current.filter(Boolean) as (keyof AbilityScores)[];
+                render();
+            });
+        });
     };
 
     const renderPointBuy = (parent: HTMLElement) => {
@@ -123,17 +216,19 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
                     <button id="reset-pb-btn" style="font-size: 0.8em;">Reset to 8s</button>
                 </div>
                 
-                <div class="abilities-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 0.5rem; text-align: center; font-weight: bold;">
+                <div class="abilities-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 0.5rem; text-align: center; font-weight: bold;">
                     <div>Ability</div>
                     <div>Base</div>
                     <div>Species</div>
+                    <div>Level</div>
                     <div>Final</div>
                     <div>Mod</div>
                     
                     ${ABILITIES.map(key => {
             const val = baseScores[key];
             const mod = mods[key] || 0;
-            const final = val + mod;
+            const levelBoost = getLevelBoost(key);
+            const final = val + mod + levelBoost;
             const abilityMod = getAbilityModifier(final);
 
             return `
@@ -143,6 +238,7 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
                              <div class="text-muted" style="font-size: 0.7em;">Cost: ${COST_TABLE[val]}</div>
                         </div>
                         <div style="align-self: center;">${mod > 0 ? '+' : ''}${mod}</div>
+                         <div style="align-self: center; color: #2ecc71;">${levelBoost > 0 ? '+' : ''}${levelBoost}</div>
                         <div class="text-accent" style="align-self: center;">${final}</div>
                         <div style="align-self: center;">${abilityMod >= 0 ? '+' : ''}${abilityMod}</div>
                         `;
@@ -250,10 +346,11 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
         containerDiv.innerHTML = `
              <p><strong>${title}:</strong> Assign values to your abilities.</p>
              <div class="card">
-                <div class="abilities-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 0.5rem; text-align: center; font-weight: bold;">
+                <div class="abilities-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; gap: 0.5rem; text-align: center; font-weight: bold;">
                     <div>Ability</div>
                     <div>Value</div>
                     <div>Species</div>
+                    <div>Level</div>
                     <div>Final</div>
                     <div>Mod</div>
                 </div>
@@ -265,7 +362,8 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
         ABILITIES.forEach(key => {
             const val = assignedRolls[key];
             const mod = mods[key] || 0;
-            const final = (val || 10) + mod;
+            const levelBoost = getLevelBoost(key);
+            const final = (val || 10) + mod + levelBoost;
             const abilityMod = getAbilityModifier(final);
 
             // Calculate available values for this row
@@ -293,6 +391,7 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
                      </select>
                 </div>
                 <div style="align-self: center;">${mod > 0 ? '+' : ''}${mod}</div>
+                <div style="align-self: center; color: #2ecc71;">${levelBoost > 0 ? '+' : ''}${levelBoost}</div>
                 <div class="text-accent" style="align-self: center;">${val ? final : '-'}</div>
                 <div style="align-self: center;">${val ? (abilityMod >= 0 ? '+' : '') + abilityMod : '-'}</div>
             `;
@@ -306,10 +405,6 @@ export function AbilitiesStep(character: Character, onNext: () => void, onBack: 
                 const val = target.value ? parseInt(target.value) : null;
 
                 assignedRolls[stat] = val;
-
-                // We need to re-render to update other dropdowns, but we can't full render() 
-                // because we might lose focus or state if not careful. 
-                // However, render() is safe enough here as we rebuild from state.
                 render();
             });
         });

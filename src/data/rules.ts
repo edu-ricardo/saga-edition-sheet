@@ -2496,6 +2496,7 @@ export const CLASSES: Record<string, Class> = {
     // Base Classes
     Jedi: {
         name: 'Jedi',
+        babProgression: 1,
         hpPerLevel: 10,
         startHp: 30,
         startSkills: 2,
@@ -2506,6 +2507,7 @@ export const CLASSES: Record<string, Class> = {
     },
     Soldier: {
         name: 'Soldier',
+        babProgression: 1,
         hpPerLevel: 10,
         startHp: 30,
         startSkills: 3,
@@ -2516,6 +2518,7 @@ export const CLASSES: Record<string, Class> = {
     },
     Noble: {
         name: 'Noble',
+        babProgression: 0.75,
         hpPerLevel: 6,
         startHp: 18,
         startSkills: 6,
@@ -2526,6 +2529,7 @@ export const CLASSES: Record<string, Class> = {
     },
     Scoundrel: {
         name: 'Scoundrel',
+        babProgression: 0.75,
         hpPerLevel: 6,
         startHp: 18,
         startSkills: 4,
@@ -2536,6 +2540,7 @@ export const CLASSES: Record<string, Class> = {
     },
     Scout: {
         name: 'Scout',
+        babProgression: 0.75,
         hpPerLevel: 8,
         startHp: 24,
         startSkills: 5,
@@ -2548,6 +2553,7 @@ export const CLASSES: Record<string, Class> = {
     // Prestige Classes (Core)
     AcePilot: {
         name: 'Ace Pilot',
+        babProgression: 0.75,
         hpPerLevel: 8,
         startHp: 0,
         startSkills: 0,
@@ -2557,12 +2563,14 @@ export const CLASSES: Record<string, Class> = {
         talentTrees: ['Expert Pilot', 'Gunner'],
         isPrestige: true,
         prerequisites: {
+            level: 7,
             feats: ['Vehicular Combat', 'Skill Focus (Pilot)'],
             skills: ['Pilot']
         }
     },
     BountyHunter: {
         name: 'Bounty Hunter',
+        babProgression: 1,
         hpPerLevel: 10,
         startHp: 0,
         startSkills: 0,
@@ -2572,12 +2580,14 @@ export const CLASSES: Record<string, Class> = {
         talentTrees: ['Bounty Hunter', 'Jedi Hunter'],
         isPrestige: true,
         prerequisites: {
+            level: 7,
             skills: ['Survival', 'Perception'],
             talents: ['Awareness', 'Hunter']
         }
     },
     CrimeLord: {
         name: 'Crime Lord',
+        babProgression: 0.75,
         hpPerLevel: 6,
         startHp: 0,
         startSkills: 0,
@@ -2593,6 +2603,7 @@ export const CLASSES: Record<string, Class> = {
     },
     EliteTrooper: {
         name: 'Elite Trooper',
+        babProgression: 1,
         hpPerLevel: 12,
         startHp: 0,
         startSkills: 0,
@@ -2608,6 +2619,7 @@ export const CLASSES: Record<string, Class> = {
     },
     ForceAdept: {
         name: 'Force Adept',
+        babProgression: 0.75,
         hpPerLevel: 8,
         startHp: 0,
         startSkills: 0,
@@ -2617,11 +2629,13 @@ export const CLASSES: Record<string, Class> = {
         talentTrees: ['Force Item', 'Force Talents', 'Sense', 'Alter', 'Control'],
         isPrestige: true,
         prerequisites: {
+            level: 7,
             feats: ['Force Sensitivity']
         }
     },
     Gunslinger: {
         name: 'Gunslinger',
+        babProgression: 1,
         hpPerLevel: 8,
         startHp: 0,
         startSkills: 0,
@@ -2631,12 +2645,14 @@ export const CLASSES: Record<string, Class> = {
         talentTrees: ['Pistol Expert', 'Rifle Expert'],
         isPrestige: true,
         prerequisites: {
+            level: 7,
             bab: 6,
             feats: ['Weapon Proficiency (Pistols)', 'Quick Draw']
         }
     },
     JediKnight: {
         name: 'Jedi Knight',
+        babProgression: 1,
         hpPerLevel: 10,
         startHp: 0,
         startSkills: 0,
@@ -2653,6 +2669,7 @@ export const CLASSES: Record<string, Class> = {
     },
     JediMaster: {
         name: 'Jedi Master',
+        babProgression: 1,
         hpPerLevel: 10,
         startHp: 0,
         startSkills: 0,
@@ -2669,6 +2686,7 @@ export const CLASSES: Record<string, Class> = {
     },
     Officer: {
         name: 'Officer',
+        babProgression: 0.75,
         hpPerLevel: 8,
         startHp: 0,
         startSkills: 0,
@@ -2684,6 +2702,7 @@ export const CLASSES: Record<string, Class> = {
     },
     SithApprentice: {
         name: 'Sith Apprentice',
+        babProgression: 1,
         hpPerLevel: 10,
         startHp: 0,
         startSkills: 0,
@@ -2693,12 +2712,14 @@ export const CLASSES: Record<string, Class> = {
         talentTrees: ['Sith'],
         isPrestige: true,
         prerequisites: {
+            level: 7,
             darkSide: true,
             feats: ['Force Sensitivity']
         }
     },
     SithLord: {
         name: 'Sith Lord',
+        babProgression: 1,
         hpPerLevel: 10,
         startHp: 0,
         startSkills: 0,
@@ -2717,6 +2738,7 @@ export const CLASSES: Record<string, Class> = {
     // Prestige Classes (Expansions)
     Gladiator: {
         name: 'Gladiator',
+        babProgression: 1,
         hpPerLevel: 12,
         startHp: 0,
         startSkills: 0,
@@ -2726,12 +2748,14 @@ export const CLASSES: Record<string, Class> = {
         talentTrees: ['Gladiator'],
         isPrestige: true,
         prerequisites: {
+            level: 7,
             bab: 6,
             feats: ['Armor Proficiency (Light)', 'Weapon Proficiency (Simple Weapons)']
         }
     },
     MeleeDuelist: {
         name: 'Melee Duelist',
+        babProgression: 1,
         hpPerLevel: 10,
         startHp: 0,
         startSkills: 0,
@@ -2741,12 +2765,14 @@ export const CLASSES: Record<string, Class> = {
         talentTrees: ['Duelist', 'Melee Smash'],
         isPrestige: true,
         prerequisites: {
+            level: 7,
             bab: 4,
             feats: ['Weapon Proficiency (Advanced Melee Weapons)']
         }
     },
     SithMarauder: {
         name: 'Sith Marauder',
+        babProgression: 1,
         hpPerLevel: 10,
         startHp: 0,
         startSkills: 0,
@@ -2756,12 +2782,14 @@ export const CLASSES: Record<string, Class> = {
         talentTrees: ['Sith', 'Weapon Specialist'],
         isPrestige: true,
         prerequisites: {
+            level: 7,
             darkSide: true,
             feats: ['Weapon Proficiency (Lightsabers)']
         }
     },
     ForceDisciple: {
         name: 'Force Disciple',
+        babProgression: 0.75,
         hpPerLevel: 8,
         startHp: 0,
         startSkills: 0,
