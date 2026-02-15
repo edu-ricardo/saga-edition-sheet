@@ -120,13 +120,9 @@ export function getSkillBonus(character: Character, skillName: string): number {
     const halfLevel = Math.floor(character.level / 2);
 
     // Skill Focus Feat
-    const hasFocus = character.feats.includes(`Skill Focus (${skillName})`) || character.feats.includes('Skill Focus');
-    // Note: The feat string might be "Skill Focus (Pilot)". If they selected generalized "Skill Focus", UI needs to handle specific.
-    // For now, let's assume specific string match or partial if we store "Skill Focus (Pilot)"
-
-    // We need to check if ANY of the feats matches "Skill Focus (<this skill>)"
-    // Or if the specific string "Skill Focus (<skillName>)" is in the list.
-    const skillFocusBonus = character.feats.some(f => f === `Skill Focus (${skillName})`) ? 5 : 0;
+    // Skill Focus Feat
+    // Check if the specific Skill Focus for this skill exists
+    const skillFocusBonus = character.feats.includes(`Skill Focus (${skillName})`) ? 5 : 0;
 
     return halfLevel + mod + (trained ? 5 : 0) + skillFocusBonus;
 }
