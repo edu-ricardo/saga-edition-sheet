@@ -1,0 +1,283 @@
+/* Official Saga Edition Sheet Style */
+.character-sheet {
+    background-color: white;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    max-width: 1000px;
+    /* Wider for A4 landscape-ish feel or standard portrait */
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    /* Reset box sizing for sheet */
+    * {
+        box-sizing: border-box;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+    }
+
+    .header-section {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid black;
+        padding-bottom: 0.5rem;
+
+        .char-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+
+            div {
+                border-bottom: 1px solid #ccc;
+                padding: 0.2rem;
+                display: flex;
+                align-items: baseline;
+
+                label {
+                    font-weight: bold;
+                    margin-right: 0.5rem;
+                    font-size: 0.8rem;
+                }
+
+                span {
+                    font-family: 'Courier New', monospace;
+                    /* Handwriting look */
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        /* Abilities Col | Main Content */
+        gap: 1rem;
+    }
+
+    .abilities-box {
+        border: 2px solid black;
+        padding: 0.5rem;
+
+        .ability-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.2rem;
+
+            .abil-name {
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+
+            .abil-score {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .abil-mod {
+                background: #ddd;
+                padding: 0.1rem 0.4rem;
+                border-radius: 4px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .defenses-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        .defense-box {
+            border: 2px solid black;
+            padding: 0.5rem;
+            text-align: center;
+
+            h4 {
+                background: black;
+                color: white;
+                padding: 0.2rem;
+                margin: -0.5rem -0.5rem 0.5rem -0.5rem;
+            }
+
+            .def-val {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .combat-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        .stat-box {
+            border: 1px solid black;
+            padding: 0.5rem;
+            text-align: center;
+
+            label {
+                display: block;
+                font-size: 0.7rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            span {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .hp-track-section {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .hp-box {
+            border: 2px solid black;
+            padding: 0.5rem;
+
+            div {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #ccc;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .condition-track {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+            padding: 0.5rem;
+
+            h4 {
+                text-align: center;
+                border-bottom: 1px solid black;
+                margin-bottom: 0.5rem;
+            }
+
+            .pips {
+                display: flex;
+                justify-content: space-between;
+
+                .pip {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .circle {
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid black;
+                        border-radius: 50%;
+                        margin-bottom: 0.2rem;
+                    }
+
+                    span {
+                        font-size: 0.7rem;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        border: 1px solid black;
+        padding: 0.5rem;
+
+        .skill-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 0.1rem 0;
+
+            &.trained {
+                font-weight: bold;
+                background-color: #f0f0f0;
+            }
+
+            label {
+                flex: 1;
+            }
+
+            .bonus {
+                width: 30px;
+                text-align: right;
+            }
+        }
+    }
+
+    .feats-talents {
+        margin-top: 1rem;
+        border: 1px solid black;
+        padding: 0.5rem;
+        min-height: 150px;
+
+        h4 {
+            background: #ccc;
+            padding: 0.2rem;
+        }
+
+        ul {
+            margin: 0.5rem 0;
+            padding-left: 1.2rem;
+            columns: 2;
+        }
+    }
+
+    .inventory-section {
+        margin-top: 1rem;
+        border: 1px solid black;
+        padding: 0.5rem;
+
+        ul {
+            margin: 0.5rem 0;
+            padding-left: 1.2rem;
+            columns: 2;
+        }
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .character-sheet {
+        box-shadow: none;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}

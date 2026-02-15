@@ -1,0 +1,818 @@
+@use "sass:color";
+// Design Tokens
+$font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+$font-mono: 'Fira Code', monospace;
+
+// Colors - Star Wars / Sci-Fi Palette
+$color-primary: #FFE81F; // Star Wars Yellow
+$color-primary-hover: #E5D01C;
+$color-accent: #4EB4E6; // Hologram Blue
+$color-danger: #FF4444; // Sith Red
+$color-success: #00FF9D; // Green Lightsaber
+
+// Light Theme
+$bg-light: #F4F5F7;
+$surface-light: #FFFFFF;
+$text-light: #172B4D;
+$border-light: #DFE1E6;
+$text-muted: #6B778C; // Added validation fix
+
+// Dark Theme
+$bg-dark: #0D1117; // Deep Space
+$surface-dark: #161B22; // Panel Grey
+$text-dark: #C9D1D9;
+$border-dark: #30363D;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Mixins
+@mixin glassmorphism {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@mixin card-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+:root {
+    font-family: $font-primary;
+    line-height: 1.6;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: $text-light;
+    background-color: $bg-light;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#app {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 $spacing-md 0;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+// Header Styles
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-md $spacing-xl;
+    background-color: $surface-light;
+    border-bottom: 1px solid $border-light;
+    @include card-shadow;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 0;
+        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+// Main Content
+main {
+    flex: 1;
+    padding: $spacing-xl;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+// Buttons
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: inherit;
+    background-color: $surface-light;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: $text-light;
+    @include card-shadow;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
+        border-color: $color-primary;
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &.primary {
+        background-color: $color-primary;
+        color: #000;
+
+        &:hover {
+            background-color: $color-primary-hover;
+        }
+    }
+}
+
+// Dark Mode Overrides
+@media (prefers-color-scheme: dark) {
+    :root {
+        color: $text-dark;
+        background-color: $bg-dark;
+    }
+
+    header {
+        background-color: $surface-dark;
+        border-bottom: 1px solid $border-dark;
+    }
+
+    button {
+        background-color: $surface-dark;
+        color: $text-dark;
+        border: 1px solid $border-dark;
+
+        &:hover {
+            border-color: $color-primary;
+        }
+    }
+
+    .wizard-container,
+    .card {
+        background-color: $surface-dark;
+        border: 1px solid $border-dark;
+    }
+
+    input,
+    select,
+    textarea {
+        background-color: #0d1117;
+        color: $text-dark;
+        border-color: $border-dark;
+    }
+}
+
+// Dark Mode Class Toggle (Managed by JS)
+body.dark-mode {
+    color: $text-dark;
+    background-color: $bg-dark;
+
+    header {
+        background-color: $surface-dark;
+        border-bottom-color: $border-dark;
+    }
+
+    button:not(.primary) {
+        background-color: $surface-dark;
+        color: $text-dark;
+        border-color: $border-dark;
+    }
+
+    .wizard-container,
+    .card {
+        background-color: $surface-dark;
+        border-color: $border-dark;
+    }
+
+    input,
+    select,
+    textarea {
+        background-color: #0d1117;
+        color: $text-dark;
+        border-color: $border-dark;
+    }
+}
+
+// Components
+.wizard-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: $surface-light;
+    border-radius: 12px;
+    @include card-shadow;
+    border: 1px solid $border-light;
+
+    h2 {
+        border-bottom: 2px solid $color-primary;
+        padding-bottom: $spacing-sm;
+        margin-bottom: $spacing-lg;
+    }
+}
+
+.wizard-flex-layout {
+    display: flex;
+    overflow: hidden;
+    min-height: 600px;
+}
+
+.wizard-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background-color: rgba($bg-light, 0.5);
+    border-right: 1px solid $border-light;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+}
+
+.wizard-content {
+    flex: 1;
+    padding: $spacing-lg $spacing-xl;
+    min-width: 0; // Prevent flex overflow issues
+}
+
+.wizard-nav-item {
+    padding: $spacing-sm $spacing-md;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    color: $text-light;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+
+    &:hover {
+        background-color: rgba($color-primary, 0.1);
+    }
+
+    &.active {
+        background-color: rgba($color-primary, 0.15);
+        border-left-color: $color-primary;
+        color: color.adjust($color-primary, $lightness: -20%); // readable contrast
+        font-weight: 600;
+    }
+}
+
+// Dark mode adjustments for new elements
+@media (prefers-color-scheme: dark) {
+    .wizard-sidebar {
+        background-color: rgba($bg-dark, 0.3);
+        border-right-color: $border-dark;
+    }
+
+    .wizard-nav-item {
+        color: $text-dark;
+
+        &.active {
+            color: $color-primary;
+        }
+    }
+}
+
+body.dark-mode {
+    .wizard-sidebar {
+        background-color: rgba($bg-dark, 0.3);
+        border-right-color: $border-dark;
+    }
+
+    .wizard-nav-item {
+        color: $text-dark;
+
+        &.active {
+            color: $color-primary;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .wizard-flex-layout {
+        flex-direction: column;
+    }
+
+    .wizard-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid $border-light;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: $spacing-md;
+        box-sizing: border-box;
+    }
+
+    .wizard-nav-item {
+        white-space: nowrap;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+
+        &.active {
+            border-left: none;
+            border-bottom-color: $color-primary;
+        }
+    }
+
+    body.dark-mode .wizard-sidebar {
+        border-bottom-color: $border-dark;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .wizard-sidebar {
+            border-bottom-color: $border-dark;
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: $spacing-lg;
+
+    label {
+        display: block;
+        margin-bottom: $spacing-xs;
+        font-weight: 500;
+        opacity: 0.9;
+    }
+
+    select,
+    input,
+    textarea {
+        width: 100%;
+        padding: $spacing-sm $spacing-md;
+        border-radius: 6px;
+        border: 1px solid $border-light;
+        font-size: 1rem;
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+            box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-md;
+    margin-top: $spacing-xl;
+    padding-top: $spacing-md;
+    border-top: 1px solid $border-light;
+}
+
+// Utilities
+.text-center {
+    text-align: center;
+}
+
+.text-accent {
+    color: $color-accent;
+}
+
+.text-muted {
+    opacity: 0.7;
+}
+
+.mt-4 {
+    margin-top: $spacing-xl;
+}
+
+.mb-4 {
+    margin-bottom: $spacing-xl;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-2 {
+    gap: $spacing-md;
+}
+
+// Animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+// UI Components
+.toast {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .active-sheet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .active-sheet-header {
+        flex-direction: column;
+        gap: $spacing-md;
+        text-align: center;
+
+        .header-actions {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
+
+// Active Sheet Styles
+.active-sheet-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+}
+
+.active-sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-md;
+    padding: $spacing-md;
+    background-color: $surface-light;
+    border-radius: 8px;
+    @include card-shadow;
+    border: 1px solid $border-light;
+
+    h2 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    span {
+        color: $text-muted;
+    }
+
+    .header-actions {
+        display: flex;
+        gap: $spacing-md;
+    }
+}
+
+.active-sheet-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    gap: $spacing-md;
+    flex: 1;
+    min-height: 0; // Fix standard grid overflow issue
+}
+
+.status-col,
+.actions-col,
+.log-col {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    overflow-y: auto;
+    padding-right: 4px; // space for scrollbar
+}
+
+.hp-control {
+    text-align: center;
+
+    .hp-display {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: $spacing-md 0;
+
+        .label {
+            font-size: 0.8rem;
+            vertical-align: middle;
+            color: $text-muted;
+        }
+
+        .max {
+            font-size: 1rem;
+            color: $text-muted;
+        }
+    }
+
+    .hp-buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+        margin-bottom: $spacing-md;
+
+        button {
+            padding: 4px;
+            font-size: 0.9rem;
+        }
+    }
+
+    .second-wind-box {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .subtext {
+            font-size: 0.8rem;
+            color: $text-muted;
+        }
+    }
+}
+
+.def-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-sm;
+    text-align: center;
+
+    .def-box {
+        display: flex;
+        flex-direction: column;
+        background: rgba($bg-light, 0.5);
+        padding: $spacing-sm;
+        border-radius: 4px;
+
+        .def-label {
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .def-val {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: $color-primary;
+        }
+    }
+}
+
+.resource-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-sm;
+
+    .stepper {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+
+        span {
+            min-width: 24px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .stepper-btn {
+            padding: 2px 8px;
+            min-width: auto;
+        }
+    }
+}
+
+.attack-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-sm;
+    border-bottom: 1px solid $border-light;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .attack-name {
+        font-weight: bold;
+    }
+
+    .attack-bonus {
+        color: $color-success;
+        font-weight: bold;
+        margin-left: $spacing-sm;
+    }
+}
+
+.skills-quick-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: $spacing-sm;
+
+    .skill-btn {
+        display: flex;
+        justify-content: space-between;
+        padding: $spacing-sm;
+        text-align: left;
+        border: 1px solid $border-light;
+
+        &.trained {
+            border-color: $color-primary;
+            background-color: rgba($color-primary, 0.05);
+        }
+
+        .skill-mod {
+            font-weight: bold;
+        }
+    }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-md;
+
+    h3 {
+        margin: 0;
+    }
+}
+
+.inventory-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .inv-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 4px 0;
+        border-bottom: 1px dashed $border-light;
+
+        .delete-item-btn {
+            padding: 0 4px;
+            min-width: auto;
+            color: $color-danger;
+            border: none;
+            background: none;
+            box-shadow: none;
+
+            &:hover {
+                background-color: rgba($color-danger, 0.1);
+            }
+        }
+    }
+}
+
+.roll-log-container {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid $border-light;
+    border-radius: 4px;
+    padding: $spacing-sm;
+    background: rgba(0, 0, 0, 0.02);
+    font-family: $font-mono;
+    font-size: 0.9rem;
+
+    .log-entry {
+        margin-bottom: 4px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding-bottom: 2px;
+
+        .log-time {
+            color: $text-muted;
+            font-size: 0.75rem;
+            margin-right: 4px;
+        }
+
+        .crit {
+            color: $color-success;
+            font-weight: bold;
+        }
+
+        .fail {
+            color: $color-danger;
+            font-weight: bold;
+        }
+
+        .heal {
+            color: $color-success;
+        }
+
+        .damage {
+            color: $color-danger;
+        }
+
+        .system {
+            color: $color-accent;
+            font-style: italic;
+        }
+    }
+}
+
+// Dark Mode integration for new elements
+body.dark-mode {
+
+    .active-sheet-header,
+    .status-card,
+    .def-box,
+    .roll-log-container {
+        background-color: $surface-dark;
+        border-color: $border-dark;
+    }
+
+    .def-box {
+        background-color: rgba($bg-dark, 0.5);
+    }
+
+    .roll-log-container {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .attack-row {
+        border-bottom-color: $border-dark;
+    }
+
+    .skill-btn {
+        border-color: $border-dark;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .active-sheet-header,
+    .status-card,
+    .def-box,
+    .roll-log-container {
+        background-color: $surface-dark;
+        border-color: $border-dark;
+    }
+
+    .def-box {
+        background-color: rgba($bg-dark, 0.5);
+    }
+
+    .roll-log-container {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .attack-row {
+        border-bottom-color: $border-dark;
+    }
+
+    .skill-btn {
+        border-color: $border-dark;
+    }
+}

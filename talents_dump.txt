@@ -1,0 +1,325 @@
+Row 6: B=Jedi | C=Jedi Consular | D=Adept Negotiator | E=undefined | I=As a Standard Action, you can weaken the resolve of one opponent with your words. The target must have an Intelligence of 3 or higher, and it must be able to see, hear, and understand you. Make a Persuasion check; if the result equals or exceeds the target's Will Defense, it moves -1 step along the Condition Track. The target gets a +5 bonus to its Will Defense if it is higher level than you. If the target reaches the end of its Condition Track, it does not fall unconscious, instead, it cannot attack you or your allies for the remainder of the encounter unless you or one of your allies attacks it or one of its allies first. This is a Mind-Affecting effect.  | J=No | L=0
+Row 7: B=undefined | C=undefined | D=undefined | E=Aggressive Negotiator | I=Whenever you damage an opponent with a Lightsaber attack, you can Take 10 on any Persuasion checks you make before the end of your turn, even if you would not normally be able to. | J=No | L=0
+Row 8: B=undefined | C=undefined | D=undefined | E=Consular's Wisdom | I=Once/encounter as swift add Wisdom bonus to ally's Will Defense | J=No | L=0
+Row 9: B=undefined | C=undefined | D=undefined | E=Force Persuasion | I=Persuasion checks can be made with Use the Force, and Persuasion is considered a trained skill | J=No | L=0
+Row 10: B=undefined | C=undefined | D=undefined | E=Master Negotiator | I=Move your enemy a further step down the condition track when successful with Adept Negotiator | J=No | L=0
+Row 11: B=undefined | C=undefined | D=Adversary Lore | E=undefined | I=Make a Use the Force check against a target's Will Defense as a standard action give that enemy a -2 Reflex Defense penalty against attacks from all your allies within 12 squares, line of sight, and that understand you | J=No | L=0
+Row 12: B=undefined | C=undefined | D=undefined | E=Know Weakness | I=Whenever you use Adversary Lore, the target also takes an additional 1d6 points of damage from your allies who gain the benefits of the talent | J=No | L=0
+Row 13: B=undefined | C=undefined | D=Cleanse Mind | E=undefined | I=Once per turn, as a swift action, remove a mind-affecting effect from a single ally in line of sight | J=No | L=0
+Row 14: B=undefined | C=undefined | D=Collective Visions | E=undefined | I=Other Force-users with farseeing within 6-squares can aid another on your Use the Force check to use farseeing or farseeing-based Force powers and talents | J=No | L=0
+Row 15: B=undefined | C=undefined | D=Consular's Vitality | E=undefined | I=Once per round as a swift action, you grant one ally within 12 squares of you (and in your line of sight) bonus hit points equal to 5 + your Charisma modifier. You take a -5 penaity on all Use the Force checks until the beginning of your next turn. | J=No | L=0
+Row 16: B=undefined | C=undefined | D=undefined | E=Improved Consular's Vitality | I=Whenever you damage a target with a successful lightsaber attack, you may use the Consular's Vitality talent as a free action instead of a swift action until the start of your next turn. | J=No | L=0
+Row 17: B=undefined | C=undefined | D=Entreat Aid | E=undefined | I=Once per turn as a Swift Action, you can spend a Force Point to let one adjacent ally use the Aid Another Action (As a Reaction) to assist you with a Skill Check. You must make the Skill Check before the end of your turn, or the benefit of the Aid Another Action is lost. An ally that has already used the Aid Another Action to assist you since the end of your last turn may not be targeted by this Talent.  | J=No | L=0
+Row 18: B=undefined | C=undefined | D=Force of Will | E=undefined | I=You gain a +2 insight bonus to your Will Defense. Also, as a Swift Action, you can spend a Force Point to give all allies within 6 squares of you a +2 insight bonus to their Will Defense that lasts for the remainder of the encounter. This bonus does not extend to allies outside the range of the effect, even if they move within 6 squares of you later on. Allies who benefit from this Talent must remain within 6 squares of you to retain the insight bonus, and they lose it if you are knocked unconscious or killed. This is a Mind-Affecting effect.  | J=No | L=0
+Row 19: B=undefined | C=undefined | D=Guiding Strikes | E=undefined | I=When you deal damage to a target by making a Lightsaber attack on your turn, you can use a Swift Action before the end of your turn to activate this Talent. If you do so, allies adjacent to the target at the time you make the attack gain a +2 circumstance bonus to melee attack rolls against the target until the start of your next turn.  | J=No | L=0
+Row 20: B=undefined | C=undefined | D=Renew Vision | E=undefined | I=Regain all expended uses of farseeing once per encounter as a swift action | J=No | L=0
+Row 21: B=undefined | C=undefined | D=Recall | E=undefined | I=Whenever you spend a Force Point to return a Force power to your suite, you regain two Force powers instead of one | J=No | L=0
+Row 22: B=undefined | C=undefined | D=Skilled Advisor | E=undefined | I=Spend a full-round action to grant an ally +5 to a skill check (or +10 with a Force Point). Mind-Affecting | J=No | L=0
+Row 23: B=undefined | C=undefined | D=WatchCircle Initiate | E=undefined | I=Make a Use the Force check to use farseeing to transfer a Force Point to an ally within line of sight | J=No | L=0
+Row 24: B=undefined | C=undefined | D=undefined | E=Visionary Attack | I=As a Reaction, you can make a Use the Force check after you or an ally within 12 squares misses with a melee or ranged attack, removing one use of the Farseeing Force Power from your active Force Power Suite (As though you had activated the Force Power). If your check result equals or exceeds the Will Defense of the target of that missed attack, the attacker can reroll the missed attack roll. This counts as using the Farseeing Force Power against the target, but this Talent replaces the normal rules and effects of Farseeing. Any attack can only be affected by this Talent once (Thus, multiple characters cannot use this Talent on the same attack to allow multiple rerolls). You take a cumulative -5 penalty on Use the Force checks until the beginning of your next turn when you use this Talent.  | J=No | L=0
+Row 25: B=undefined | C=undefined | D=undefined | E=Visionary Defense | I=As a Reaction, you can make a Use the Force check after you or an ally within 12 squares is the target of a melee or ranged attack (But before the results of the attack roll are known), removing one use of the Farseeing Force Power from your active Force Power Suite (As though you had activated the Force Power). If your check result equals or exceeds the Will Defense of the attacker, you grant the target of that attack a +5 Force bonus to their Reflex Defense against that attack. This counts as using the Farseeing Force Power against the attacker, but this Talent replaces the normal rules and effects of Farseeing. Any attack can only be affected by this Talent once (Thus, multiple characters cannot use this Talent on the same attack to allow multiple rerolls). You take a cumulative -5 penalty on Use the Force checks until the beginning of your next turn when you use this Talent.  | J=No | L=0
+Row 26: B=undefined | C=Jedi Guardian | D=Acrobatic Recovery | E=undefined | I=Make a DC 20 Acrobatics check to negate falling prone | J=No | L=0
+Row 27: B=undefined | C=undefined | D=Battle Meditation | E=undefined | I=Spend a full-round action to grant yourself and allies within 6 squares +1 to attack rolls | J=No | L=0
+Row 28: B=undefined | C=undefined | D=undefined | E=Improved Battle Meditation | I=Battle Meditation is a swift action, extends to 12 squares and inflicts a -1 penalty on enemy attack rolls | J=No | L=0
+Row 29: B=undefined | C=undefined | D=Close Maneuvering | E=undefined | I=Once per turn, you can use a swift action to designate a target. Until the start of your next turn, your movement does not provoke attacks of opportun ity from that target, provided that you end your movement adjacent to that target | J=No | L=0
+Row 30: B=undefined | C=undefined | D=Cover Escape | E=undefined | I=When you successfully spend a Force Point to negate a melee attack against an adjacent ally with the Block or Deflect talents, that ally can move up to 2 squares as a free action. This movement does not provoke an attack of opportunity. | J=No | L=0
+Row 31: B=undefined | C=undefined | D=Defensive Acuity | E=undefined | I=When you fight defensively you deal +1 die on lightsaber attacks and gain a +2 bonus with Block and Deflect | J=No | L=0
+Row 32: B=undefined | C=undefined | D=Elusive Target | E=undefined | I=Additional -5 penalty for ranged attacks against you whilst fighting in melee | J=No | L=0
+Row 33: B=undefined | C=undefined | D=Exposing Strike | E=undefined | I=When you use a lightsaber to deal damage to a target, you can spend a Force Point to make that target flat-footed until the end of your next turn. | J=No | L=0
+Row 34: B=undefined | C=undefined | D=Grenade Defense | E=undefined | I=You can use the Move Light Object application of Use the Force as a reaction when you are attacked by a grenade of any kind, but take a -5 penalty to Use the Force check until the start of your next turn | J=No | L=0
+Row 35: B=undefined | C=undefined | D=Guardian Strike | E=undefined | I=Whenever you use a lightsaber to deal damage to a target, that target takes a -2 penaity on attack rolls against any target other than you until the beginning of your next turn. | J=No | L=0
+Row 36: B=undefined | C=undefined | D=Force Intuition | E=undefined | I=Initiative checks can be made with Use the Force, and Initiative is considered a trained skill | J=No | L=0
+Row 37: B=undefined | C=undefined | D=Forceful Warrior | E=undefined | I=Upon scoring a critical hit with a lightsaber, gain a temporary Force Point | J=No | L=0
+Row 38: B=undefined | C=undefined | D=Hold the Line | E=undefined | I=When you make a successful attack of opportunity against a moving opponent, you end the target's move action | J=No | L=0
+Row 39: B=undefined | C=undefined | D=Immovable | E=undefined | I=You can activate this talent as a swift action. Until the start of your next turn, anyone attempting to move you involuntarily (such as with a bantha rush or the move object Force power) takes a -5 penalty to attack rolls or skill checks made to use the effect that would move you. An enemy can only take the penalty from this talent once per attempt, regardless of How many targets have used this talent | J=No | L=0
+Row 40: B=undefined | C=undefined | D=Mobile Combatant | E=undefined | I=Spend a swift action upon ending movement adjacent to an enemy to move with them up to your speed, whilst still benefiting from attacks of opportunity | J=No | L=0
+Row 41: B=undefined | C=undefined | D=Resilience | E=undefined | I=Spend a full-round action to move +2 steps along the condition track | J=No | L=0
+Row 42: B=undefined | C=Jedi Sentinel | D=Clear Mind | E=undefined | I=May reroll any Use the Force check made to avoid being detected by other Force-users, but must accept the result of the reroll even if it is worse | J=No | L=0
+Row 43: B=undefined | C=undefined | D=undefined | E=Force Haze | I=Spend a Force Point as a standard action to grant a number of creatures up to your class level total concealment from an opponent if your Use the Force check beats their Will Defense | J=No | L=0
+Row 44: B=undefined | C=undefined | D=undefined | E=undefined | I=Whenever anyone concealed by your use of the Foce Haze talent attacks, you maintain total concealment without having to make another Use the Force check. Only those who do not attack remain concealed. | J=No | L=0
+Row 45: B=undefined | C=undefined | D=undefined | E=undefined | I=Whenever you use the Force Haze talent, allies hidden by the haze can reroll any Perception check, keeping the better result. Addition¬ally, allies hidden by the haze gain +2 on all damage rolls against foes that are unaware of them. | J=No | L=0
+Row 46: B=undefined | C=undefined | D=Dampen Presence | E=undefined | I=Use the Force against a target's Will Defense as a swift action to cause them to forget your interaction | J=No | L=0
+Row 47: B=undefined | C=undefined | D=Dark Side Sense | E=undefined | I=May reroll any Use the Force check made to sense the presence and relative location of characters with a Dark Side score, but must accept the result of the reroll even if it is worse | J=No | L=0
+Row 48: B=undefined | C=undefined | D=undefined | E=Dark Side Bane | I=Deal Charisma bonus extra damage using Force powers against dark siders | J=No | L=0
+Row 49: B=undefined | C=undefined | D=undefined | E=Dark Side Scourge | I=Deal extra damage equal to your Charisma modifier (minimum +1) against creatures with a Dark Side Score | J=No | L=0
+Row 50: B=undefined | C=undefined | D=undefined | E=Resist the Dark Side | I=+5 to all Defense scores against Dark Side Force powers and any Force power from a dark Force-user | J=No | L=0
+Row 51: B=undefined | C=undefined | D=Gradual Resistance | E=undefined | I=If you take damage from the use of a Force power, until the end of the encounter you gain a +2 Force bonus to all defenses against that Force power. | J=No | L=0
+Row 52: B=undefined | C=undefined | D=Master of the Great Hunt | E=undefined | I=Gain +1 to attack and deal +1 die of damage against beasts with a dark side score of 1 or more | J=No | L=0
+Row 53: B=undefined | C=undefined | D=Prime Targets | E=undefined | I=When you hit a target with a lightsaber attack, if the target has not been attacked since the end of your last turn, you deal +1 die of damage. | J=No | L=0
+Row 54: B=undefined | C=undefined | D=Reap Retribution | E=undefined | I=If you take damage from the use of a Force power, until the end of the encounter you deal an extra 2 points of damage against the creature that used the Force power against you. | J=No | L=0
+Row 55: B=undefined | C=undefined | D=Sense Primal Force | E=undefined | I=can use Sense Surroundings to detect targets 30sq radius, regardless of LOS | J=No | L=0
+Row 56: B=undefined | C=undefined | D=Sentinel Strike | E=undefined | I=Deal 1d6 extra damage to flat-footed opponents with Force powers or lightsaber attacks
+
+(Enter number of times taken) | J=No | L=0
+Row 57: B=undefined | C=undefined | D=undefined | E=Dark Retaliation | I=Spend a Force Point once per encounter upon being targeted by a dark side power to activate a Force power as a reaction | J=No | L=0
+Row 58: B=undefined | C=undefined | D=Sentinel's Gambit | E=undefined | I=As a swift action once per encounter, designate an adjacent opponent with a Dark Side score to deny them their Dexterity bonus to Reflex Defense until your next turn | J=No | L=0
+Row 59: B=undefined | C=undefined | D=Sentinel's Observation | E=undefined | I=If you have concealment against a target, you gain a +2 circumstance bonus on attack rolls against that target. | J=No | L=0
+Row 60: B=undefined | C=undefined | D=Steel Resolve | E=undefined | I=Take a penalty to your melee attack roll to gain twice that as a bonus to your Will Defense | J=No | L=0
+Row 61: B=undefined | C=Lightsaber Combat | D=Block | E=undefined | I=Make a Use the Force check as a reaction to negate a melee attack roll against you, or provide you with cover against Whirlwind Attack, with a cumulative penalty of -5 each time Block or Deflect has been used since your last turn | J=No | L=0
+Row 62: B=undefined | C=undefined | D=undefined | E=Riposte | I=Once per encounter, gain a free lightsaber attack against an opponent whose attack you have negated using Block | J=No | L=0
+Row 63: B=undefined | C=undefined | D=Cortosis Gauntlet Block | E=undefined | I=Use Block with cortosis gauntlet, attacking lightsaber deactivated | J=No | L=0
+Row 64: B=undefined | C=undefined | D=Deflect | E=undefined | I=Make a Use the Force check as a reaction to negate a ranged attack roll against you, or provide you with cover against autofire or Force Lightning, with a cumulative penalty of -5 each time Block or Deflect has been used since your last turn | J=No | L=0
+Row 65: B=undefined | C=undefined | D=undefined | E=Redirect Shot | I=Once per round on a successful use of Deflect on a single blaster bolt, make a ranged attack against a target using the blaster weapon's damage | J=No | L=0
+Row 66: B=undefined | C=undefined | D=undefined | E=undefined | I=Whenever you successfully redirect a blaster bolt and hit your target, the redirected attack deals + 1 die of damage. | J=No | L=0
+Row 67: B=undefined | C=undefined | D=Lightsaber Defense | E=undefined | I=Gain +1 to Reflex Defense as a swift action until your next turn
+
+(Enter number of times taken) | J=No | L=0
+Row 68: B=undefined | C=undefined | D=Precision | E=undefined | I=As standard action make melee attack with lightsaber, reduces target's speed to 2 squares until end of your next turn | J=No | L=0
+Row 69: B=undefined | C=undefined | D=Shoto Focus | E=undefined | I=Whenever you wield a one-handed lightsaber and a shoto or guard shoto, you gain a +2 competence bonus to attacks made with the shoto | J=No | L=0
+Row 70: B=undefined | C=undefined | D=Weapon Specialization (lightsabers) | E=undefined | I=Gain +2 bonus to damage rolls with lightsabers | J=No | L=0
+Row 71: B=undefined | C=undefined | D=Lightsaber Throw | E=undefined | I=A lightsaber is no longer considered an improvised thrown weapon, and can be recalled after a thrown attack within 6 squares with a DC 20 Use the Force check | J=No | L=0
+Row 72: B=The Force | C=Alter | D=Aversion | E=undefined | I=As a swift action, spend a Force point to make creatures want to avoid you, making all squares in a 2-square radius count as difficult terrain for your enemies | J=No | L=0
+Row 73: B=undefined | C=undefined | D=Disciplined Strike | E=undefined | I=Exclude a number of targets equal to your Wisdom modifier (minimum 1) from cone effect Force powers | J=No | L=0
+Row 74: B=undefined | C=undefined | D=Force Flow | E=undefined | I=Gain a temporary Force Point upon rolling a natural 1 on an attack roll or Use the Force check | J=No | L=0
+Row 75: B=undefined | C=undefined | D=Illusion | E=undefined | I=Spend a Force Point as a standard action to create illusions which appear real to those whose Will Defense is exceeded by your Use the Force check | J=No | L=0
+Row 76: B=undefined | C=undefined | D=undefined | E=Illusion bond | I=Can see or hear as if you were standing in the space of your illusion if humanoid | J=No | L=0
+Row 77: B=undefined | C=undefined | D=undefined | E=Masquerade | I=You can use the Use the Force skill in place of Deception for the purposes of creating a deceptive appearance | J=No | L=0
+Row 78: B=undefined | C=undefined | D=Influence Savant | E=undefined | I=1/encounter can return one mind-affecting Force power as a Swift action without costing a Force point | J=No | L=0
+Row 79: B=undefined | C=undefined | D=undefined | E=Suppress Force | I=Use mind trick to convince a target they can't use the Force | J=No | L=0
+Row 80: B=undefined | C=undefined | D=Link | E=undefined | I=One ally trained in Use the Force can aid another to another within 12 squares and line of sight as a reaction, but takes a penalty on Use the Force checks | J=No | L=0
+Row 81: B=undefined | C=undefined | D=Telekinetic Power | E=undefined | I=Free extra use of of telekinetic Force power on a natural 20 | J=No | L=0
+Row 82: B=undefined | C=undefined | D=undefined | E=Move Massive Object | I=Spend a Force point to have targets of Move Object bigger than Large deal area damage | J=No | L=0
+Row 83: B=undefined | C=undefined | D=Telekinetic Savant | E=undefined | I=Return a telekinetic Force power to your suite as a swift action once per encounter
+
+(Enter number of times taken) | J=No | L=0
+Row 84: B=undefined | C=undefined | D=undefined | E=Telekinetic Prodigy | I=Gain a free telekinetic power when you select move object as one of the powers from Force Training | J=No | L=0
+Row 85: B=undefined | C=undefined | D=Telepathic Link | E=undefined | I=Form a telepathic link with another Force Sensitive ally which allows instant communication within one kilometer, and once per encounter use of a Force power from their Force suite | J=No | L=0
+Row 86: B=undefined | C=undefined | D=undefined | E=Telepathic Influence | I=Upon rolling a natural 20 on an attack roll or Use the Force check, you may grant an ally within 12 squares a temporary Force Point instead of regaining all spent Force powers | J=No | L=0
+Row 87: B=undefined | C=Control | D=Beast Trick | E=undefined | I=You can use mind trick on creatures of Intelligence 2 or lower | J=No | L=0
+Row 88: B=undefined | C=undefined | D=Channel Energy | E=undefined | I=Whenever you use the negate energy Force power to successfully negate the damage from an energy weapon attack, you can spend a Force Point as a reaction to immediately activate any Force Power currently in your Force suite | J=No | L=0
+Row 89: B=undefined | C=undefined | D=Damage Reduction 10 | E=undefined | I=Spend a Force Point to gain DR 10 for 1 minute as a standard action | J=No | L=0
+Row 90: B=undefined | C=undefined | D=Equilibrium | E=undefined | I=Spend a Force Point to remove all debilitating conditions as a swift action | J=No | L=0
+Row 91: B=undefined | C=undefined | D=undefined | E=Force Recovery | I=Gain an extra 1d6 hit points per Force Point (maximum 10d6)  when using second wind | J=No | L=0
+Row 92: B=undefined | C=undefined | D=Force Exertion | E=undefined | I=Move -1 persistent step along the condition track to choose a Force power which can be used an extra time at the expense of any other power
+
+(Enter number of times taken) | J=No | L=0
+Row 93: B=undefined | C=undefined | D=Force Focus | E=undefined | I=Make a DC 15 Use the Force check to regain a spent Force power as a full round action | J=No | L=0
+Row 94: B=undefined | C=undefined | D=Force Harmony | E=undefined | I=Once per encounter, you can activate one Force talent that requires a Force Point to use without spending a Force Point | J=No | L=0
+Row 95: B=undefined | C=undefined | D=Force Suppression | E=undefined | I=Upon failing to successfully negate or redirect a Force power with rebuke, you may instead lessen the effect of the Force power one step | J=No | L=0
+Row 96: B=undefined | C=undefined | D=Indomitable Will | E=undefined | I=Spend a Force Point as a standard action to become immune to all mind-affecting effects for 1 minute | J=No | L=0
+Row 97: B=undefined | C=undefined | D=Telekinetic Stability | E=undefined | I=You are immune to effects that move you against your will | J=No | L=0
+Row 98: B=undefined | C=undefined | D=The Will to Resist | E=undefined | I=Once per turn, as a reaction, when defending against a Force power that targets your Will Defense, you can roll a Use the Force check and use the result instead, but the next round your Use the Force checks are -5 | J=No | L=0
+Row 99: B=undefined | C=Dark Side | D=Consumed by Darkness | E=undefined | I=As a swift action, take a -5 penalty to Will Defense to gain a +2 bonus to attack until your next round | J=No | L=0
+Row 100: B=undefined | C=undefined | D=Dark Side Savant | E=undefined | I=Once per encounter as a swift action, you can return one Force power with the [dark side] descriptor to your Force suite without spending a Force Point | J=No | L=0
+Row 101: B=undefined | C=undefined | D=Drain Knowledge | E=undefined | I=Gain Skill Training or Focus in a skill from a touched target with a Use the Force check against their Will Defense or learn information with a Perception check | J=No | L=0
+Row 102: B=undefined | C=undefined | D=Power of the Dark Side | E=undefined | I=Choose the best of two rolls on the bonus die for spending a Force Point to modify an attack roll, increasing Dark Side Score by 1 | J=No | L=0
+Row 103: B=undefined | C=undefined | D=undefined | E=Dark Presence | I=You and allies within 6 squares gain +1 bonus to all defenses until the end of the encounter as a standard action | J=No | L=0
+Row 104: B=undefined | C=undefined | D=undefined | E=undefined | I=Gain +2 bonus to attack rolls and damage rolls for the remainder of the encounter upon the death (or reduction to 0 hit points) of an ally of equal or higher ally | J=No | L=0
+Row 105: B=undefined | C=undefined | D=undefined | E=Dark Preservation | I=Negate moving down the condition track by increasing your Dark Side score | J=No | L=0
+Row 106: B=undefined | C=undefined | D=undefined | E=Swift Power | I=Use a Force power of standard or move action duration as a swift action once per day | J=No | L=0
+Row 107: B=undefined | C=undefined | D=undefined | E=Wrath of the Dark Side | I=Upon rolling a natural 20 to activate a damaging Force Power, you may deal half the damage again at the beginning of the target's next turn instead of replenishing your Force suite | J=No | L=0
+Row 108: B=undefined | C=undefined | D=Transfer Essence | E=undefined | I=When you die become a dark side spirit and can possess others or enter an object | J=No | L=0
+Row 109: B=undefined | C=Guardian Spirit | D=Guardian Spirit | E=undefined | I=Your guardian spirit can tell you the immediate consequences of your actions, and you gain a bonus Force point per day after a 6-hour rest that can be only used to enhance Force powers, or activate techniques and secrets | J=No | L=0
+Row 110: B=undefined | C=undefined | D=undefined | E=Crucial Advice | I=1/encounter reroll failed skill check with +2 bonus | J=No | L=0
+Row 111: B=undefined | C=undefined | D=undefined | E=Manifest Guardian Spirit | I=Your guardian spirit appears for the encounter within 6 squares of you, and as long as it remains within 12 squares from you, you receive +1 on attack rolls, +2 on Use the Force checks, and +2 Will Defense; you can move the spirit up to six squares once per round as a Swift action | J=No | L=0
+Row 112: B=undefined | C=undefined | D=undefined | E=undefined | I=Any enemy within 3 squares takes a -2 penalty to Will Defense and attack rolls against you | J=No | L=0
+Row 113: B=undefined | C=undefined | D=undefined | E=Vital Encouragement | I=1/encounter you gain temporary hit points equal to 10 + 1/2 your heroic level | J=No | L=0
+Row 114: B=undefined | C=Light Side | D=At Peace | E=undefined | I=Spend a Force point to gain a +2 bonus to all Defenses until the end of the encounter, or when you attack, whichever comes first | J=No | L=0
+Row 115: B=undefined | C=undefined | D=Focused Attack | E=undefined | I=You can spend a Force point to reroll an attack against a target with a Dark Side score of 1 or more and take the better of the results | J=No | L=0
+Row 116: B=undefined | C=undefined | D=undefined | E=Attuned | I=When you roll a natural 20 against a target with a Dark Side score of 1 or more, you may activate a Force power with the [Light Side] descriptor immediately as a free action | J=No | L=0
+Row 117: B=undefined | C=undefined | D=Surge of Light | E=undefined | I=Once per encoutner, as a swift action, you can return any Force power with the [light side] descriptor without spending a Force point | J=No | L=0
+Row 118: B=undefined | C=Sense | D=Feel the Force | E=undefined | I=Spend a Force Point as a standard to ignore all concealment for 1 minute | J=No | L=0
+Row 119: B=undefined | C=undefined | D=Force Perception | E=undefined | I=Perception checks can be made with Use the Force, and Perception is considered a trained skill | J=No | L=0
+Row 120: B=undefined | C=undefined | D=undefined | E=Foresight | I=Spend a Force point to reroll an Initiative check, keeping the better result, regaining the Force point in the case of a natual 20 | J=No | L=0
+Row 121: B=undefined | C=undefined | D=undefined | E=Gauge Force Potential | I=Make a Use the Force check against a target's Will Defense as a standard action to ascertain whether it is Force Sensitive, and how many Force powers and Force Points it has | J=No | L=0
+Row 122: B=undefined | C=undefined | D=undefined | E=Motion of the Future | I=Use a use of the farseeing power from your suite, and before end of your next turn force attacker to reroll their attack roll and keep the second result | J=No | L=0
+Row 123: B=undefined | C=undefined | D=undefined | E=Psychometry | I=When you use Farseeing you can choose to target an object you hold and look into its past up to 5 years per level | J=No | L=0
+Row 124: B=undefined | C=undefined | D=undefined | E=Visions | I=Farseeing can be used to see the past or future of the target at the cost of a Force Point | J=No | L=0
+Row 125: B=undefined | C=undefined | D=Force Pilot | E=undefined | I=Pilot checks can be made with Use the Force, and Pilot is considered a trained skill | J=No | L=0
+Row 126: B=undefined | C=undefined | D=undefined | E=Force Reflexes | I=Spend a Force Point to reroll a Pilot check to activate a Starship Maneuver and keep the better result | J=No | L=0
+Row 127: B=undefined | C=undefined | D=undefined | E=Instinctive Navigation | I=Use the Force replaces Use Computer for astrogation | J=No | L=0
+Row 128: B=undefined | C=undefined | D=Heightened Awareness | E=undefined | I=You can spend a Force point to add your Charisma bonus to your Perception check | J=No | L=0
+Row 129: B=undefined | C=undefined | D=Shift Sense | E=undefined | I=You can spend a Force Point to gain low-light vision for 1 minute or until the end of the encounter, whichever is longer | J=No | L=0
+Row 130: B=Noble | C=Anticipation | D=Anticipate Movement | E=undefined | I=Once per round, as a reaction to an enemy in your line of sight moving, you can enable one ally within your line of sight to move up to his or her speed as a free action.  | J=No | L=0
+Row 131: B=undefined | C=undefined | D=Forewarn Allies | E=undefined | I=All allies within 12 squares of you gain a +2 insight bonus on attack rolls and damage rolls for attacks of opportunity. | J=No | L=0
+Row 132: B=undefined | C=undefined | D=undefined | E=Heavy Fire Zone | I=Once per turn, as a swift action, destinate a 3×3 square area within your line of sight. Until the end of your next turn, if a target moves into that area you can enable one ally within your line of sight to make an attack of opportunity against that target. The ally you choose must be armed with a weapon capable of making attacks of opportunity, and this counts toward the ally's normal limitations for attacks of opportunity made in a round. Prerequisite: Forewarn Allies. | J=No | L=0
+Row 133: B=undefined | C=undefined | D=Get Down | E=undefined | I=As a reaction, when an ally is targeted by a ranged attack, you can enable that ally to drop prone immediately (imposing the normal -2 penalty for a ranged attack against a prone target to the triggered attack roll) as a free action. | J=No | L=0
+Row 134: B=undefined | C=undefined | D=undefined | E=Summon Aid | I=Once per round, as a reaction, when an enemy moves adjacent to you, you can enable one ally within your line of sight to immediately make a charge attack against the triggering enemy. The ally you choose must be able to charge the enemy from his or her current square under normal charge rules. Prerequisite: Get Down. | J=No | L=0
+Row 135: B=undefined | C=Collaborator | D=Double Agent | E=undefined | I=When you roll Initiative at the beginning of combat, also roll a Deception check, comparing the result to the Will Defense of all enemies in line of sight. If your Deception check is successful, that target cannot attack you while this effect is active. | J=No | L=0
+Row 136: B=undefined | C=undefined | D=undefined | E=Protection | I=As a standard action, you designate one ally and make a Persuasion check against the Will Defense of all enemies in line of sight. Successful checks mean they cannot attack the ally you designated until the beginning of your next turn. | J=No | L=0
+Row 137: B=undefined | C=undefined | D=Enemy Tactics | E=undefined | I=Whenever an enemy within 12 squares of you and in your line of sight receives an insight or morale bonus from any source, you can also gain that bonus, subject to all the same limitations as the bonus provided to that enemy. | J=No | L=0
+Row 138: B=undefined | C=undefined | D=undefined | E=Friendly Fire | I=If you are in melee combat with an adjacent enemy and are the target of a ranged attack that misses you, if the attack equals or exceeds the enemy's Reflex Defense, that enemy becomes the new target of the attack, which is resolved as normal. | J=No | L=0
+Row 139: B=undefined | C=undefined | D=Feed Information | E=undefined | I=As a swift action, you can grant one enemya +1 bonus on its next attack roll made before the beginning of your next turn. Additionally, until the beginning of your next turn, you can designate one ally who receives a +2 bonus on its next attack roll. | J=No | L=0
+Row 140: B=undefined | C=Disgrace | D=Castigate | E=undefined | I=Make Persuasion check as standard action against target's Will Defense. If successful, you impose a -2 penalty to all the target's Defenses until the end of your net turn. | J=No | L=0
+Row 141: B=undefined | C=undefined | D=Dirty Tactics | E=undefined | I=Once per encounter, as a standard action, you grant tactical advantage to all allies within your line of sight. When an ally flanks an opponent, that ally gains a +4 flanking bonus on melee attack rolls instead of the normal +2 bonus. | J=No | L=0
+Row 142: B=undefined | C=undefined | D=undefined | E=Ambush | I=During a surprise round, before combat begins, if you are not surprised, you can give up your standard action to allow all nonsurprised allies within line of sight to take an extra move action during the surprise round or reroll their Initiative check. | J=No | L=0
+Row 143: B=undefined | C=undefined | D=undefined | E=Misplaced Loyalty | I=As swift action, make Persuasion check against Will Defense of all opponents within line of sight. If successful, targets cannot attack you if one of your allies is within 6 squares of you. | J=No | L=0
+Row 144: B=undefined | C=undefined | D=undefined | E=undefined | I=Use each of the following actions once per encounter as a standard action:
+- Flase Security
+- Nonthreatening
+- Tricky Target
+See p. 14 of Scum and Villainy | J=No | L=0
+Row 145: B=undefined | C=undefined | D=Unreadable | E=undefined | I=Gain +5 bonus to your Will Defense against skill checks made to read your emotions and influence your attitude. Additionally, when you feint a target in combat, that target is flat-footed against all your attacks until the end of your next turn. | J=No | L=0
+Row 146: B=undefined | C=Exile | D=Arrogant Bluster | E=undefined | I=Persuasion to change enemy's attitude for -5 enemy's Will Def until next turn, FP for end of enc | J=No | L=0
+Row 147: B=undefined | C=undefined | D=Galactic Guidance | E=undefined | I=1/enc as reac if succeed on Know (galactic lore) enable 1 ally w/in 6sq & LOS to reroll failed Int or Wis based skill check (other than Perception) | J=No | L=0
+Row 148: B=undefined | C=undefined | D=Rant | E=undefined | I=if succeed on Persuasion to intimidate enemy w/in 6sq deny enemy move instead, grant 1 ally to use move immediately | J=No | L=0
+Row 149: B=undefined | C=undefined | D=Self-Reliant | E=undefined | I=1/enc use 1 talent from Inspiration tree on yourself | J=No | L=0
+Row 150: B=undefined | C=undefined | D=undefined | E=undefined | I=1/enc each: 1. swif 1 enemy whenever an ally w/in 12sq hits target +1d6 dam, 2. swif grant allies w/in 12sq & LOS +5 Will Def until end next turn, 3. w/Persuasion unfriendly or indifferent into ally for enc direct target as swif | J=No | L=0
+Row 151: B=undefined | C=Fencing | D=Noble Fencing Style | E=undefined | I=When using a light melee weapon or lightsaber with which you are proficient, you may use your Charisma modifier instead of your Strength modifier on attack rolls | J=No | L=0
+Row 152: B=undefined | C=undefined | D=undefined | E=Demoralizing Defense | I=Halve damage from a melee attack on an opponent to instead inflict a -5 penalty on attacks made against you until your next turn | J=No | L=0
+Row 153: B=undefined | C=undefined | D=undefined | E=Leading Feint | I=Upon damaging an opponent with a melee attack, make a Deception check against them to leave them flat-footed against an ally within six squares until your next turn | J=No | L=0
+Row 154: B=undefined | C=undefined | D=undefined | E=Personal Affront | I=Upon being damaged by an adjacent enemy once per encounter, make a free single melee attack against them | J=No | L=0
+Row 155: B=undefined | C=undefined | D=undefined | E=Transposing Strike | I=Deal half damage to an enemy to switch places with them | J=No | L=0
+Row 156: B=undefined | C=Idealogue | D=Idealist | E=undefined | I=You may use your Charisma bonus instead of Wisdom bonus for Will Defense | J=No | L=0
+Row 157: B=undefined | C=undefined | D=Instruction | E=undefined | I=As a standard action, once per encounter for each time taken, grant an ally within 6 squares use of your skill modifier (except for Use the Force)
+
+(Enter number of times taken) | J=No | L=0
+Row 158: B=undefined | C=undefined | D=Know Your Enemy | E=undefined | I=As a swift action make a Knowledge (galactic lore) check against DC 15 + target's CL to learn two of: base attack bonus, particular attack bonus, defense score, skill modifier, taken talent or taken feat | J=No | L=0
+Row 159: B=undefined | C=undefined | D=undefined | E=Known Dissident | I=Make a Persuasion check against the Will Defense of a single opponent within line of sight as a standard action to keep them from attacking you until your next turn | J=No | L=0
+Row 160: B=undefined | C=undefined | D=Lead by Example | E=undefined | I=Once per encounter, upon dealing damage to an enemy, grant all allies +1 attack and +1 die damage against the same target | J=No | L=0
+Row 161: B=undefined | C=Gambling Leader | D=Assault Gambit | E=undefined | I=Once per turn, as a standard action, you can designate one ally and one enemy that have line of effect to each other. The ally and the enemy make opposed Initiative checks, and the winner can make a single immediate melee or ranged attack against the loser. No character can benefit from this talent more than once per round. | J=No | L=0
+Row 162: B=undefined | C=undefined | D=undefined | E=Direct Fire | I=Once per turn, as a swift action, you can designate one ally and one target that does not have cover from you. Until the start of your next tum, the ally you designate ignores that target's cover bonuses to Reflex Defense.
+Prerequisite: Assault Gambit. | J=No | L=0
+Row 163: B=undefined | C=undefined | D=Face the Foe | E=undefined | I=If you do not have cover from a target, you gain a +1 morale bonus to attack rolls against that target. | J=No | L=0
+Row 164: B=undefined | C=undefined | D=undefined | E=Lead From the Front | I=If you do not have cover from a target that you damage with a ranged attack, all your allies gain a +2 morale bonus to attack rolls against that target and a +5 circumstance bonus to opposed Initiative checks against that target until the start of your next turn.
+Prerequisite: Face the Foe. | J=No | L=0
+Row 165: B=undefined | C=undefined | D=undefined | E=Luck Favors the Bold | I=If at least one enemy in your line of sight is aware of you and you do not have cover against that enemy, at the start of your tum if you are conscious you gain a number of bonus hit points equal to 5 + one-half your level. Damage is subtracted from bonus hit points first, and any bonus hit points remaining at the end of the encounter are lost. Bonus hit points do not stack.
+Prerequisite: Face the Foe. | J=No | L=0
+Row 166: B=undefined | C=Influence | D=Presence | E=undefined | I=Persuasion checks to intimidate are standard actions, not full-round actions | J=No | L=0
+Row 167: B=undefined | C=undefined | D=undefined | E=Demand Surrender | I=Make a Persuasion check once per encounter against the Will Defense of a target reduced to less than half hit-points to enforce their surrender | J=No | L=0
+Row 168: B=undefined | C=undefined | D=undefined | E=Fluster | I=Once per encounter as a standard action, use Persuasion to intimidate an opponent within line of sight to allow them only a swift action for their turn | J=No | L=0
+Row 169: B=undefined | C=undefined | D=undefined | E=Intimidating Defense | I=Once per encounter as a reaction, make a Persuasion check to intimidate an opponent within line of sight to apply a -5 penalty to their attack roll | J=No | L=0
+Row 170: B=undefined | C=undefined | D=undefined | E=Weaken Resolve | I=Make a Persuasion check against a target's Will Defense upon dealing damage greater than their damage threshold to enforce their flight | J=No | L=0
+Row 171: B=undefined | C=undefined | D=undefined | E=undefined | I=Targets fleeing from Weaken Resolve don't stop running if wounded | J=No | L=0
+Row 172: B=undefined | C=Inspiration | D=Bolster Ally | E=undefined | I=Move an ally +1 step along the condition track once per encounter and impart bonus hit points equal to his character level if he is below half hit points | J=No | L=0
+Row 173: B=undefined | C=undefined | D=Inspire Confidence | E=undefined | I=All allies within line of sight gain a +1 bonus to attack rolls and skill checks until the end of the encounter as a standard action | J=No | L=0
+Row 174: B=undefined | C=undefined | D=undefined | E=Beloved | I=You can use each of the following actions once per encounter:
+- Guardian
+- Reprisal
+- To me!
+See p.14 of Scum and Villainy. | J=No | L=0
+Row 175: B=undefined | C=undefined | D=undefined | E=Ignite Fervor | I=Grant an ally a bonus to damage on his next attack roll equal to his character level upon hitting an opponent with a ranged or melee attack | J=No | L=0
+Row 176: B=undefined | C=undefined | D=undefined | E=undefined | I=Opponents moved down the condition track from attacks made by allies within line of sight move an additional -1 step down the condition track | J=No | L=0
+Row 177: B=undefined | C=undefined | D=undefined | E=Willpower | I=Once per encounter as a swift action, grant allies within line of sight +2 Will Defense | J=No | L=0
+Row 178: B=undefined | C=undefined | D=Inspire Haste | E=undefined | I=As a swift action, an ally within line of sight can make a skill check requiring a standard action as a move action on his next turn | J=No | L=0
+Row 179: B=undefined | C=Leadership | D=Born Leader | E=undefined | I=Allies within line of sight gain a +1 bonus to attack rolls whilst remaining in line of sight, activated as a swift action once per encounter | J=No | L=0
+Row 180: B=undefined | C=undefined | D=undefined | E=Coordinated Leadership | I=1 talent from Leadership tree stacks w/bonuses from others | J=No | L=0
+Row 181: B=undefined | C=undefined | D=undefined | E=Distant Command | I=The bonus from Born Leader applies even if line of sight is disrupted | J=No | L=0
+Row 182: B=undefined | C=undefined | D=undefined | E=undefined | I=Allies within line of sight at less than half hit points gain a +2 bonus to Reflex Defense, Will Defense and damage rolls, activated as a swift action once per encounter | J=No | L=0
+Row 183: B=undefined | C=undefined | D=undefined | E=Fearless Leader | I=Allies gain +5 to Will Defense against fear effects for the rest of the encounter, activated as a swift action | J=No | L=0
+Row 184: B=undefined | C=undefined | D=undefined | E=Reactionary Attack | I=Once per encounter, upon you or an ally being attacked, grant an ally within 6 squares a free attack against the attacking enemy | J=No | L=0
+Row 185: B=undefined | C=undefined | D=undefined | E=Tactical Savvy | I=When an ally whom you can see spends a Force point to enhance an attack roll, the ally gains a bonus to the Force point roll equal to your Intelligence modifier. Prerequisite: Born Leader. | J=No | L=0
+Row 186: B=undefined | C=undefined | D=undefined | E=undefined | I=You excel at leading others into battle, issuing quick commands, demonstrating a gift for strategy, decimating your enemies, and impressing your peers. You can use each of the following actions once per encounter as a standard action: 
+* Hold the Line: Make a single melee or ranged attack against any target within your range. If your attack hits, all allies within 6 squares of you a gain a +2 morale bonus to their Defense scores until the end of your next turn. 
+* Lead the Assault: Make a single melee or ranged attack against any target within your range. If your attack hits. all allies within 6 squares of you and within your line of sight gain a +2 morale bonus to their attack rolls and damage rolls until the end of your next turn. 
+* Turn the Tide: Make a single melee or ranged attack against any target within your range. lf you successfully damage the target, a number of allies equal to your Charisma modifier (minimum 1) can immediately move up to half their speed as a free action. Prerequisites: Born Leader, Tactical Savvy. | J=No | L=0
+Row 187: B=undefined | C=undefined | D=Coordinate | E=undefined | I=Allies within line of sight grant an additional +1 bonus when using aid another until the start of your next turn, activated as a standard action
+
+(Enter number of times taken) | J=No | L=0
+Row 188: B=undefined | C=undefined | D=undefined | E=Trust | I=Give up a standard action to grant an ally within line of sight an extra standard or move action on their next turn | J=No | L=0
+Row 189: B=undefined | C=undefined | D=Unwavering Ally | E=undefined | I=Once per turn, as a swift action, you can designate one ally within your line of sight who can hear and understand you. Until the start of your next turn, that ally becomes immune to all effects that render the ally flat-footed or that deny the ally a Dexterity bonus to his or her Reflex Defense. | J=No | L=0
+Row 190: B=undefined | C=Lineage | D=Connections | E=undefined | I=Avoid paying license fees on equipment less than your character level x 1000 credits, and reduce the black market cost multiplier by 1 | J=No | L=0
+Row 191: B=undefined | C=undefined | D=undefined | E=Influential Friends | I=Once per day, receive a skill check at 25 + half your heroic level over the course of 10 x skill check result minutes | J=No | L=0
+Row 192: B=undefined | C=undefined | D=undefined | E=undefined | I=Once per encounter, take 20 on a Persuasion check without taking longer than usual | J=No | L=0
+Row 193: B=undefined | C=undefined | D=Educated | E=undefined | I=Knowledge checks can be made untrained | J=No | L=0
+Row 194: B=undefined | C=undefined | D=undefined | E=Engineer | I=Trained in Mechanics. Time taken to install new systems into a vehicle is reduced by 25% | J=No | L=0
+Row 195: B=undefined | C=undefined | D=undefined | E=Spontaneous Skill | I=Make a skill check once per day as if trained in a skill you are untrained in (except Use the Force)
+
+(Enter number of times taken) | J=No | L=0
+Row 196: B=undefined | C=undefined | D=Wealth | E=undefined | I=Gain 5000 credits for each level of Noble every time you gain a level | J=No | L=0
+Row 197: B=undefined | C=Loyal Protector | D=Inspire Loyalty | E=undefined | I=You gain a single follower. Choose either the aggressive, defensive, or utility follower template for your follower. This follower gains one Armor Proficiency feat of your choice and becomes trained in the Perception skill.  | J=No | L=0
+Row 198: B=undefined | C=undefined | D=undefined | E=Protector Actions | I=You can use any of the following actions on your turn. 
+- Bodyguard
+- Diversion Attack
+- The Best Defense | J=No | L=0
+Row 199: B=undefined | C=undefined | D=undefined | E=Punishing Protection | I=As a reaction to you being damaged by an attack or a Force power, one of your followers can make an immediate melee or ranged attack against the target that attacked you. | J=No | L=0
+Row 200: B=undefined | C=undefined | D=undefined | E=Undying Loyalty | I=Each of your followers gains the Toughness feat. | J=No | L=0
+Row 201: B=undefined | C=Master of Intrigue | D=Blend In | E=undefined | I=As a Swift Action, you gain Total Concealment when adjacent to at least two other creatures. This benefit does not apply to attacks from adjacent creatures.  | J=No | L=0
+Row 202: B=undefined | C=undefined | D=Done It All | E=undefined | I=Choose two talents you meet reqs. Spend FP to gain access 1/turn until the end of your next turn | J=No | L=0
+Row 203: B=undefined | C=undefined | D=Get into Position | E=undefined | I=1/enc at the start of your first turn two allies in LOS and 12 sq move their speed as reac | J=No | L=0
+Row 204: B=undefined | C=undefined | D=undefined | E=undefined | I=1/enc each: 1. ally w/in 5 sq & LOS +5 up track & +2 atk & skills, 2. roll d20 as reac can replace enemy or ally in LOS d20 roll, 3. ally w/in 5 sq & LOS can replace their def with your def as reac for next | J=No | L=0
+Row 205: B=undefined | C=undefined | D=Advanced Planning | E=undefined | I=When you roll Initiative for combat, choose one willing ally within your line of sight. You and that ally swap Initiative results.  | J=No | L=0
+Row 206: B=undefined | C=undefined | D=undefined | E=Retaliation | I=When you move down track from dam exceeding thresh, next atk before end of next turn moves target -1 down track if it takes damage | J=No | L=0
+Row 207: B=undefined | C=Provocateur | D=Cast Suspicion | E=undefined | I=Prevent one enemy from receiving morale and insight bonuses for  round | J=No | L=0
+Row 208: B=undefined | C=undefined | D=undefined | E=Friend or Foe | I=Redirect a missed attack against an ally to an adjacent enemy | J=No | L=0
+Row 209: B=undefined | C=undefined | D=undefined | E=undefined | I=Make a Persuasion check against Will Defense to order an enemy to attack another of your foes | J=No | L=0
+Row 210: B=undefined | C=undefined | D=undefined | E=Stolen Advantage | I=You usurp an enemy's attempt to Aid Another and give the bonus to an ally | J=No | L=0
+Row 211: B=undefined | C=undefined | D=Distress to Discord | E=undefined | I=When your allies take a Second Wind, your enemies lose their Dexterity bonus to Reflex Defense | J=No | L=0
+Row 212: B=undefined | C=undefined | D=undefined | E=Seize the Moment | I=When an enemy is reduced to 0 hit points, you grant a Second Wind to any ally for free with bonus hit points equal to your level | J=No | L=0
+Row 213: B=undefined | C=Skill Challenge | D=Guaranteed Boon | E=undefined | I=If you spend FP on skill roll and fail regain FP | J=No | L=0
+Row 214: B=undefined | C=undefined | D=Leading Skill | E=undefined | I=When you succeed with skill in skill challenge, gain +2 on different skill roll in same challenge | J=No | L=0
+Row 215: B=undefined | C=undefined | D=Learn from Mistakes | E=undefined | I=When you fail check in skill challenge, next ally gains +2 with different skill | J=No | L=0
+Row 216: B=undefined | C=undefined | D=Try Your Luck | E=undefined | I=When you fail check in skill challenge choose ally. Next use of same skill roll 2 dice & keep better | J=No | L=0
+Row 217: B=undefined | C=Superior Skills | D=Assured Skill (Acrobatics) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 218: B=undefined | C=undefined | D=Assured Skill (Climb) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 219: B=undefined | C=undefined | D=Assured Skill (Deception) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 220: B=undefined | C=undefined | D=Assured Skill (Endurance) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 221: B=undefined | C=undefined | D=Assured Skill (Gather Information) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 222: B=undefined | C=undefined | D=Assured Skill (Initiative) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 223: B=undefined | C=undefined | D=Assured Skill (Jump) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 224: B=undefined | C=undefined | D=Assured Skill (Knowledge [Bureaucracy]) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 225: B=undefined | C=undefined | D=Assured Skill (Knowledge [Galactic Lore]) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 226: B=undefined | C=undefined | D=Assured Skill (Knowledge [Life Sciences]) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 227: B=undefined | C=undefined | D=Assured Skill (Knowledge [Physical Sciences]) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 228: B=undefined | C=undefined | D=Assured Skill (Knowledge [Social Sciences]) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 229: B=undefined | C=undefined | D=Assured Skill (Knowledge [Tactics]) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 230: B=undefined | C=undefined | D=Assured Skill (Knowledge [Technology]) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 231: B=undefined | C=undefined | D=Assured Skill (Mechanics) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 232: B=undefined | C=undefined | D=Assured Skill (Perception) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 233: B=undefined | C=undefined | D=Assured Skill (Persuasion) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 234: B=undefined | C=undefined | D=Assured Skill (Pilot) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 235: B=undefined | C=undefined | D=Assured Skill (Ride) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 236: B=undefined | C=undefined | D=Assured Skill (Stealth) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 237: B=undefined | C=undefined | D=Assured Skill (Survival) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 238: B=undefined | C=undefined | D=Assured Skill (Swim) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 239: B=undefined | C=undefined | D=Assured Skill (Treat Injury) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 240: B=undefined | C=undefined | D=Assured Skill (Use Computer) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 241: B=undefined | C=undefined | D=Assured Skill (Use the Force) | E=undefined | I=Lose competence bonuses on 1 skill to roll 2 dice keep better | J=No | L=0
+Row 242: B=undefined | C=undefined | D=Critical Skill Success | E=undefined | I=When you roll nat 20 on a skill, choose different skill. Gain +5 before end of next turn as free | J=No | L=0
+Row 243: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Acrobatics) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 244: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Climb) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 245: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Deception) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 246: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Endurance) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 247: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Gather Information) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 248: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Initiative) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 249: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Jump) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 250: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Knowledge [Bureaucracy]) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 251: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Knowledge [Galactic Lore]) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 252: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Knowledge [Life Sciences]) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 253: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Knowledge [Physical Sciences]) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 254: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Knowledge [Social Sciences]) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 255: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Knowledge [Tactics]) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 256: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Knowledge [Technology]) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 257: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Mechanics) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 258: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Perception) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 259: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Persuasion) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 260: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Pilot) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 261: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Ride) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 262: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Stealth) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 263: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Survival) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 264: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Swim) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 265: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Treat Injury) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 266: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Use Computer) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 267: B=undefined | C=undefined | D=undefined | E=Skill Confidence (Use the Force) | I=nat 19 or 20 gain benefit of Critical Skill Success and bonus hp = Cha mod | J=No | L=0
+Row 268: B=undefined | C=undefined | D=Exceptional Skill (Acrobatics) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 269: B=undefined | C=undefined | D=Exceptional Skill (Climb) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 270: B=undefined | C=undefined | D=Exceptional Skill (Deception) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 271: B=undefined | C=undefined | D=Exceptional Skill (Endurance) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 272: B=undefined | C=undefined | D=Exceptional Skill (Gather Information) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 273: B=undefined | C=undefined | D=Exceptional Skill (Initiative) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 274: B=undefined | C=undefined | D=Exceptional Skill (Jump) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 275: B=undefined | C=undefined | D=Exceptional Skill (Knowledge [Bureaucracy]) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 276: B=undefined | C=undefined | D=Exceptional Skill (Knowledge [Galactic Lore]) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 277: B=undefined | C=undefined | D=Exceptional Skill (Knowledge [Life Sciences]) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 278: B=undefined | C=undefined | D=Exceptional Skill (Knowledge [Physical Sciences]) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 279: B=undefined | C=undefined | D=Exceptional Skill (Knowledge [Social Sciences]) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 280: B=undefined | C=undefined | D=Exceptional Skill (Knowledge [Tactics]) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 281: B=undefined | C=undefined | D=Exceptional Skill (Knowledge [Technology]) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 282: B=undefined | C=undefined | D=Exceptional Skill (Mechanics) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 283: B=undefined | C=undefined | D=Exceptional Skill (Perception) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 284: B=undefined | C=undefined | D=Exceptional Skill (Persuasion) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 285: B=undefined | C=undefined | D=Exceptional Skill (Pilot) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 286: B=undefined | C=undefined | D=Exceptional Skill (Ride) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 287: B=undefined | C=undefined | D=Exceptional Skill (Stealth) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 288: B=undefined | C=undefined | D=Exceptional Skill (Survival) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 289: B=undefined | C=undefined | D=Exceptional Skill (Swim) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 290: B=undefined | C=undefined | D=Exceptional Skill (Treat Injury) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 291: B=undefined | C=undefined | D=Exceptional Skill (Use Computer) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 292: B=undefined | C=undefined | D=Exceptional Skill (Use the Force) | E=undefined | I=when you roll a nat 2-7, treat as 8. | J=No | L=0
+Row 293: B=undefined | C=undefined | D=Reliable Boon | E=undefined | I=Reroll FP dice that show 1 on a skill check & reroll until it is 2 or higher | J=No | L=0
+Row 294: B=undefined | C=undefined | D=Skill Boon (Acrobatics) | E=undefined | I=increase FP dice to next higher on 1 skill (d6 to d8, d8 to d10, d10 to d12) | J=No | L=0
+Row 295: B=undefined | C=undefined | D=Skill Boon (Climb) | E=undefined | I=increase FP dice to next higher on 1 skill (d6 to d8, d8 to d10, d10 to d12) | J=No | L=0
+Row 296: B=undefined | C=undefined | D=Skill Boon (Deception) | E=undefined | I=increase FP dice to next higher on 1 skill (d6 to d8, d8 to d10, d10 to d12) | J=No | L=0
+Row 297: B=undefined | C=undefined | D=Skill Boon (Endurance) | E=undefined | I=increase FP dice to next higher on 1 skill (d6 to d8, d8 to d10, d10 to d12) | J=No | L=0
+Row 298: B=undefined | C=undefined | D=Skill Boon (Gather Information) | E=undefined | I=increase FP dice to next higher on 1 skill (d6 to d8, d8 to d10, d10 to d12) | J=No | L=0
+Row 299: B=undefined | C=undefined | D=Skill Boon (Initiative) | E=undefined | I=increase FP dice to next higher on 1 skill (d6 to d8, d8 to d10, d10 to d12) | J=No | L=0
